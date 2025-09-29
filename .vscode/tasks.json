@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build mdlook (Go)",
+			"type": "shell",
+			"command": "go build -o ../build/mdlook.exe",
+			"options": {
+				"cwd": "${workspaceFolder}/source"
+			},
+			"problemMatcher": ["$go"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Serve Web (Angular)",
+			"type": "shell",
+			"command": "npm start",
+			"options": {
+				"cwd": "${workspaceFolder}/web"
+			},
+			"problemMatcher": [],
+			"isBackground": true,
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared"
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Build Web (Angular)",
+			"type": "shell",
+			"command": "npm run build",
+			"options": {
+				"cwd": "${workspaceFolder}/web"
+			},
+			"problemMatcher": [],
+			"group": "build"
+		},
+	]
+}

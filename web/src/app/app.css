@@ -1,0 +1,8 @@
+.sidebar-sidenav {
+  background: var(--b1);
+}
+
+.sidebar-container {
+  background: var(--b1);
+  border-radius: 0px;
+}

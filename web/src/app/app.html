@@ -1,0 +1,34 @@
+<div class="h-screen bg-base-100">
+    <mat-drawer-container class="h-screen sidebar-container" autosize>
+        <mat-drawer #drawer [mode]="drawerMode" [opened]="drawerOpened" class="h-screen sidebar-sidenav">
+            <app-nav-renderer class="text-base-content"></app-nav-renderer>
+        </mat-drawer>
+
+        <mat-drawer-content>
+
+            <div class="navbar sticky top-0 backdrop-blur flex flex-col z-30 text-base-content bg-base-100/90">
+
+                <div class="w-full">
+                    <div class="flex justify-between items-center w-full">
+                        <button type="button" class="btn btn-ghost" (click)="drawer.toggle()">
+                            <i class='bx  bx-menu bx-sm'></i>
+                        </button>
+
+                        <div class="flex gap-1">
+                            <button class="btn btn-circle"><i class='bx  bx-search bx-xs '></i></button>
+                            <button class="btn btn-circle"><i class='bx  bx-printer bx-xs '></i></button>
+                        </div>
+                    </div>
+                    <doc-breadcrumbs></doc-breadcrumbs>
+                </div>
+
+            </div>
+
+            <div class="p-10 bg-base-100">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-content>
+
+    </mat-drawer-container>
+
+</div>

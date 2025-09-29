@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "@tailwindcss/typography";
+@import "boxicons";
+
+/* Load all default DaisyUI themes */
+@plugin "daisyui" {
+  themes: all;
+}

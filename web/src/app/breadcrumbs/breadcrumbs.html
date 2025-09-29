@@ -1,0 +1,12 @@
+<div class="px-5">
+    <div class="breadcrumbs text-sm">
+        <ul>
+            @for (crumb of urls_segments; track $index ;) {
+            <li>
+                {{ crumb }}
+            </li>
+            }
+
+        </ul>
+    </div>
+</div>
