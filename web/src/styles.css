@@ -8,3 +8,7 @@
 @plugin "daisyui" {
   themes: all;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+}

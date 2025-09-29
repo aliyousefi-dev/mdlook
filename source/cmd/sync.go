@@ -2,65 +2,37 @@ package cmd
 
 import (
 	"fmt"
+	"mdlook/source/internal/mdrepo"
 	"os"
-	"path/filepath"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
 
 var syncCmd = &cobra.Command{
-	Use:   "sync",
+	Use:   "sync [path]",
 	Short: "Synchronize files",
+	Args:  cobra.MaximumNArgs(1), // Allow 0 or 1 argument (the path)
 	Run: func(cmd *cobra.Command, args []string) {
-		// Path to the docs folder
-		docsPath := "docs"
-
-		// Open or create nav.md file
-		navFilePath := "nav.md"
-		navFile, err := os.OpenFile(navFilePath, os.O_RDWR|os.O_CREATE, 0644)
-		if err != nil {
-			fmt.Println("Error opening nav.md:", err)
-			return
-		}
-		defer navFile.Close()
-
-		// Clear the existing content in nav.md
-		err = navFile.Truncate(0)
-		if err != nil {
-			fmt.Println("Error clearing nav.md:", err)
-			return
-		}
-
-		// Add header to nav.md
-		navFile.WriteString("# Navigation\n\n")
-
-		// Walk through the docs folder to find all .md files
-		err = filepath.Walk(docsPath, func(path string, info os.FileInfo, err error) error {
+		// Determine the directory path to use
+		var targetPath string
+		if len(args) > 0 {
+			// If a path argument is provided, use it
+			targetPath = args[0]
+		} else {
+			// If no argument is provided, use the current working directory
+			var err error
+			targetPath, err = os.Getwd()
 			if err != nil {
-				fmt.Println("Error walking the path:", err)
-				return err
+				fmt.Println("Failed to get working directory:", err)
+				return
 			}
-
-			// Only consider .md files
-			if !info.IsDir() && strings.HasSuffix(info.Name(), ".md") {
-				relativePath := strings.TrimPrefix(path, docsPath+"/") // relative path to the docs folder
-				relativePath = filepath.ToSlash(relativePath)          // Convert backslashes to forward slashes
-				// Remove the .md extension from the file name
-				trimmedName := strings.TrimSuffix(info.Name(), ".md")
-				// Write the file to nav.md in a markdown list format
-				navFile.WriteString(fmt.Sprintf("- [%s](%s)\n", trimmedName, relativePath))
-			}
-			return nil
-		})
-
-		if err != nil {
-			fmt.Println("Error walking the docs folder:", err)
-			return
 		}
 
-		// Print success message
-		fmt.Println("Synchronization complete! nav.md has been updated.")
+		// Initialize the MDLookManager with the target path
+		mdmanager := mdrepo.NewMDLookManager(targetPath)
+
+		// Call SyncNav to synchronize navigation files
+		mdmanager.SyncNav()
 	},
 }
 

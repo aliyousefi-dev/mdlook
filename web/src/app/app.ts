@@ -5,6 +5,10 @@ import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { NavRenderer } from './nav-renderer/nav-renderer';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs';
+import { ThemeDropdownComponent } from './theme-dropdown/theme-dropdown';
+import { MarkdownButtonComponent } from './markdown-button/markdown-button';
+import { SearchButtonComponent } from './search-button/search-button';
+import { PrintButtonComponent } from './print-button/print-button';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +19,10 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs';
     RouterModule,
     NavRenderer,
     BreadcrumbsComponent,
+    ThemeDropdownComponent,
+    MarkdownButtonComponent,
+    SearchButtonComponent,
+    PrintButtonComponent,
   ],
   templateUrl: './app.html',
   styles: [

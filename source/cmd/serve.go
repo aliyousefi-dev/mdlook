@@ -24,11 +24,7 @@ var serveCmd = &cobra.Command{
 		}
 
 		// Create a new instance of MDLookManager with the specified directory
-		mdManager, err := mdrepo.NewMDLookManager(absoluteServePath)
-		if err != nil {
-			fmt.Println("Failed to initialize MDLookManager:", err)
-			return
-		}
+		mdManager := mdrepo.NewMDLookManager(absoluteServePath)
 
 		// Start the server with both the primary and secondary paths (absolute paths)
 		mdManager.StartServer("127.0.0.1:8080", absoluteServePath)

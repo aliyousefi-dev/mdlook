@@ -2,13 +2,13 @@ package mdrepo
 
 // RepoManager handles video registration, thumbnails, previews, etc.
 type MDLookManager struct {
-	docDir string
+	workstationDir string
 }
 
 // NewMDLookManager creates a new instance of MDLookManager and initializes data storage.
-func NewMDLookManager(docDir string) (*MDLookManager, error) {
+func NewMDLookManager(docDir string) *MDLookManager {
 	mdManager := &MDLookManager{
-		docDir: docDir,
+		workstationDir: docDir,
 	}
-	return mdManager, nil
+	return mdManager
 }

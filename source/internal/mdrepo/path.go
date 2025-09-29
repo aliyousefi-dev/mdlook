@@ -31,3 +31,21 @@ func (mdlook *MDLookManager) GetIndexHtmlPath() string {
 	indexPath := filepath.Join(webDir, "index.html")
 	return indexPath
 }
+
+func (mdlook *MDLookManager) GetNavFilePath() string {
+	workstatonDir := mdlook.workstationDir
+	navFilePath := filepath.Join(workstatonDir, "nav.md")
+	return navFilePath
+}
+
+func (mdlook *MDLookManager) GetDocsFolder() string {
+	workstationDir := mdlook.workstationDir
+	docsFolder := filepath.Join(workstationDir, "docs")
+	return docsFolder
+}
+
+func (mdlook *MDLookManager) GetAssetsFolder() string {
+	workstationDir := mdlook.workstationDir
+	assetsFolder := filepath.Join(workstationDir, "assets")
+	return assetsFolder
+}

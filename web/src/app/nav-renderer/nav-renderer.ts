@@ -38,7 +38,7 @@ export class NavRenderer implements OnInit {
 
     // Delegate click events for router navigation
     setTimeout(() => {
-      const container = document.querySelector('.p-10.menu');
+      const container = document.querySelector('#nav-renderer');
       if (container) {
         container.addEventListener('click', (event: any) => {
           const target = event.target.closest('a[routerLink]');
