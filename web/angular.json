@@ -15,7 +15,7 @@
           "options": {
             "browser": "src/main.ts",
             "outputPath": {
-              "base": "../thirdparty/docs",
+              "base": "../build/web",
               "browser": ""
             },
             "polyfills": ["zone.js"],
@@ -23,7 +23,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "../sample-doc"
               }
             ],
             "styles": [
@@ -78,7 +78,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "../sample-doc"
               }
             ],
             "styles": ["src/styles.css"]

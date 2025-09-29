@@ -17,6 +17,10 @@ with additional features for organizing, processing, and managing your documenta
 
 	// common commands
 	cmd.InitCommandInit(rootCmd)
+	cmd.InitCommandServe(rootCmd)
+	cmd.InitCommandVersion(rootCmd)
+	cmd.InitCommandSync(rootCmd)
+	cmd.InitCommandWatch(rootCmd)
 
 	rootCmd.Execute()
 	// Initialize the root command and add subcommands
