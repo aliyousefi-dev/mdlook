@@ -33,19 +33,19 @@ func (mdlook *MDLookManager) GetIndexHtmlPath() string {
 }
 
 func (mdlook *MDLookManager) GetNavFilePath() string {
-	workstatonDir := mdlook.workstationDir
+	workstatonDir := mdlook.WorkstationDir
 	navFilePath := filepath.Join(workstatonDir, "nav.md")
 	return navFilePath
 }
 
 func (mdlook *MDLookManager) GetDocsFolder() string {
-	workstationDir := mdlook.workstationDir
+	workstationDir := mdlook.WorkstationDir
 	docsFolder := filepath.Join(workstationDir, "docs")
 	return docsFolder
 }
 
 func (mdlook *MDLookManager) GetAssetsFolder() string {
-	workstationDir := mdlook.workstationDir
+	workstationDir := mdlook.WorkstationDir
 	assetsFolder := filepath.Join(workstationDir, "assets")
 	return assetsFolder
 }

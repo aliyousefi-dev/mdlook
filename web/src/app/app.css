@@ -1,8 +1,10 @@
 .sidebar-sidenav {
   background: var(--b1);
+  z-index: 0;
 }
 
 .sidebar-container {
   background: var(--b1);
+  overflow: visible;
   border-radius: 0px;
 }

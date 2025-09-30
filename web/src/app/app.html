@@ -10,13 +10,17 @@
 
                 <div class="w-full">
                     <div class="flex justify-between items-center w-full">
-                        <button type="button" class="btn btn-ghost" (click)="drawer.toggle()">
-                            <i class='bx  bx-menu bx-sm'></i>
-                        </button>
+                        <div class=" flex">
+                            <button type="button" class="btn btn-ghost" (click)="drawer.toggle()">
+                                <i class='bx  bx-menu bx-sm'></i>
+                            </button>
+                            <doc-theme-dropdown></doc-theme-dropdown>
+                            <doc-search-button></doc-search-button>
+                        </div>
+
 
                         <div class="flex gap-1">
-                            <doc-search-button></doc-search-button>
-                            <doc-theme-dropdown></doc-theme-dropdown>
+                            <button class="btn btn-circle btn-ghost"><i class='bx  bxl-github bx-xs '></i></button>
                             <doc-markdown-button></doc-markdown-button>
                             <doc-print-button></doc-print-button>
                         </div>

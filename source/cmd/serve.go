@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"mdlook/source/internal/mdrepo"
+	"mdlook/source/internal/servers"
 	"path/filepath"
 
 	"github.com/spf13/cobra"
@@ -26,8 +27,10 @@ var serveCmd = &cobra.Command{
 		// Create a new instance of MDLookManager with the specified directory
 		mdManager := mdrepo.NewMDLookManager(absoluteServePath)
 
+		server := servers.NewWebServer("127.0.0.1", "8080", mdManager, false)
+
 		// Start the server with both the primary and secondary paths (absolute paths)
-		mdManager.StartServer("127.0.0.1:8080", absoluteServePath)
+		server.Start()
 	},
 }
 

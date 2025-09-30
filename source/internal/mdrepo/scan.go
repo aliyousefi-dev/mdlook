@@ -24,7 +24,7 @@ func (mdlook *MDLookManager) ScanDirectory() types.NavRenderStruct {
 		// Only consider .md files
 		if !info.IsDir() && strings.HasSuffix(info.Name(), ".md") {
 			// Get the relative path to the docs folder
-			relativePath, err := filepath.Rel(mdlook.workstationDir, path)
+			relativePath, err := filepath.Rel(mdlook.WorkstationDir, path)
 			if err != nil {
 				log.Println("Error getting relative path:", err)
 				return err
