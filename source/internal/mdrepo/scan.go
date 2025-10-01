@@ -50,3 +50,28 @@ func (mdlook *MDLookManager) ScanDirectory() types.NavRenderStruct {
 	// Create and return the NavRenderStruct with relative paths
 	return types.NewNavRender("Table of Contents", navItems)
 }
+
+func (mdlook *MDLookManager) GetAllFolderPaths() ([]string, error) {
+	var folderPaths []string
+
+	docsFolderPath := mdlook.GetDocsFolder()
+
+	// Walk through the docs folder and collect all directory paths
+	err := filepath.Walk(docsFolderPath, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		// Add the path to the list if it is a directory
+		if info.IsDir() {
+			folderPaths = append(folderPaths, path)
+		}
+		return nil
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	return folderPaths, nil
+}

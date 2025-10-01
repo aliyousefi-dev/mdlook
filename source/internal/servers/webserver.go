@@ -110,10 +110,6 @@ func (s *WebServer) Start() {
 	}
 }
 
-func (s *WebServer) AddWebSocketHandler() {
-
-}
-
 func (s *WebServer) GetInjectSocketCode(host, port string) string {
 	// JavaScript code to inject for WebSocket functionality with dynamic host and port
 	socketCode := fmt.Sprintf(`

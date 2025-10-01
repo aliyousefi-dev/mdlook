@@ -34,10 +34,12 @@ func (w *WorkstationWatcher) Run() {
 		}
 	}()
 
-	// Watch the directory containing your markdown files (replace with your path)
-	err = watcher.Add(w.SearchPath)
-	if err != nil {
-		log.Fatal(err)
+	for _, path := range w.SearchPath {
+		// Watch the directory containing your markdown files (replace with your path)
+		err = watcher.Add(path)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	// Block main goroutine forever.

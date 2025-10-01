@@ -23,7 +23,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "../sample-doc"
+                "input": "../mdlook-docs"
               }
             ],
             "styles": ["src/custom-theme.scss", "src/styles.css"]

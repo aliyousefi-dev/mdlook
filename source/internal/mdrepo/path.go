@@ -49,3 +49,9 @@ func (mdlook *MDLookManager) GetAssetsFolder() string {
 	assetsFolder := filepath.Join(workstationDir, "assets")
 	return assetsFolder
 }
+
+func (mdlook *MDLookManager) GetConfigFilePath() string {
+	workstationDir := mdlook.WorkstationDir
+	configFilePath := filepath.Join(workstationDir, "config.json")
+	return configFilePath
+}

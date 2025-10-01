@@ -7,6 +7,7 @@ func (mdlook *MDLookManager) SyncNav() {
 	navContent := mdlook.LoadNav()
 	parsedNavContent := mdlook.NavParser(navContent)
 	mergedChanges := mdlook.MergeChanges(scanResult, parsedNavContent)
+	mergedChanges.HeaderTitle = mdlook.LoadConfig().DocName
 	renderMarkdown := mdlook.NavRender(mergedChanges)
 	mdlook.CleanNav()
 	mdlook.WriteNav(renderMarkdown)
