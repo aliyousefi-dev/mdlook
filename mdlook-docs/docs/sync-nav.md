@@ -1,38 +1,14 @@
-# Architecture
-
-it serve all markdowns. and then render them on client frontend locally. you can serve the output with anything.
-
----
-
-## Static Serve
-
-it serve all markdown as public statics
-
-```
-nav.md
-- docs
-    - content01.md
-    - content02.md
-    - content03.md
-- assets
-    - img.png
-```
-
-## Runtime Watcher
-
-it use a Event Based Watcher for the changes on the folders.
-
-## Internal Renderer
-
-it uses the `MarkdownRendererComponent` to render the markdown.
-it render the markdown internally. in client frontend.
-also wrap that and create a custom language for that also.
-
-## Sync Nav
+# Sync Nav
 
 The Sync function sync the `nav.md` file.
 
-### Nav Structure
+## Cli command
+
+```
+mdlook sync
+```
+
+## Nav Structure
 
 here you can see the nav structre file `nav.md`
 
@@ -54,9 +30,11 @@ here you can see the nav structre file `nav.md`
 
 > by default Sync is enabled for auto nav. you can disable that on the `config.json` file.
 
-### Nested َAlgorythm
+## Nested Files
 
 here show how nested file is rendererd on the `nav.md`
 
 if there is a same name on outside the sub pages going under that with intend.
 if there is not any same name as folder. it create a title and they going under that title.
+
+# MDLook

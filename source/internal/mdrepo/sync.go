@@ -4,11 +4,8 @@ import "mdlook/source/internal/types"
 
 func (mdlook *MDLookManager) SyncNav() {
 	scanResult := mdlook.ScanDirectory()
-	navContent := mdlook.LoadNav()
-	parsedNavContent := mdlook.NavParser(navContent)
-	mergedChanges := mdlook.MergeChanges(scanResult, parsedNavContent)
-	mergedChanges.HeaderTitle = mdlook.LoadConfig().DocName
-	renderMarkdown := mdlook.NavRender(mergedChanges)
+
+	renderMarkdown := mdlook.NavRender(scanResult)
 	mdlook.CleanNav()
 	mdlook.WriteNav(renderMarkdown)
 }
