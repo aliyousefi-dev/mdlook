@@ -38,7 +38,7 @@ func (mdlook *MDLookManager) GetNavFilePath() string {
 	return navFilePath
 }
 
-func (mdlook *MDLookManager) GetDocsFolder() string {
+func (mdlook *MDLookManager) GetDocsFolderPath() string {
 	workstationDir := mdlook.WorkstationDir
 	docsFolder := filepath.Join(workstationDir, "docs")
 	return docsFolder

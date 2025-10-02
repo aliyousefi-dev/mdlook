@@ -10,7 +10,7 @@ import (
 
 // ScanDirectory scans the docs folder, finds all .md files, and generates a NavRenderStruct
 func (mdlook *MDLookManager) ScanDirectory() types.NavRenderStruct {
-	docsFolderPath := mdlook.GetDocsFolder()
+	docsFolderPath := mdlook.GetDocsFolderPath()
 
 	var navItems []types.NavItem
 
@@ -54,7 +54,7 @@ func (mdlook *MDLookManager) ScanDirectory() types.NavRenderStruct {
 func (mdlook *MDLookManager) GetAllFolderPaths() ([]string, error) {
 	var folderPaths []string
 
-	docsFolderPath := mdlook.GetDocsFolder()
+	docsFolderPath := mdlook.GetDocsFolderPath()
 
 	// Walk through the docs folder and collect all directory paths
 	err := filepath.Walk(docsFolderPath, func(path string, info os.FileInfo, err error) error {

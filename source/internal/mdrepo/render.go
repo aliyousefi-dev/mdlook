@@ -16,17 +16,17 @@ type MarkdownBlock struct {
 }
 
 // NavRender generates the markdown content from the NavRenderStruct and returns it as a string
-func (mdlook *MDLookManager) NavRender(navRenderStruct types.NavRenderStruct) string {
+func (mdlook *MDLookManager) NavRender() string {
 	// Initialize a strings.Builder to efficiently build the markdown content
 	var markdownContent strings.Builder
 
 	// Write the header (Markdown header)
-	_, err := markdownContent.WriteString(fmt.Sprintf("# %s\n\n", navRenderStruct.HeaderTitle))
+	_, err := markdownContent.WriteString(fmt.Sprintf("# %s\n\n", "Header"))
 	if err != nil {
 		log.Fatalf("error writing header: %v", err)
 	}
 
-	pages := mdlook.SortPageSection(mdlook.RenderPageSection(navRenderStruct.NavItems))
+	pages := mdlook.RenderNavTree(mdlook.ScanNavTree())
 
 	markdownContent.WriteString(pages)
 

@@ -12,7 +12,7 @@ import (
 func (mdlook *MDLookManager) GenerateNavFileContent(docsPath string) (string, error) {
 	var navContent strings.Builder
 
-	docFolderPath := mdlook.GetDocsFolder()
+	docFolderPath := mdlook.GetDocsFolderPath()
 
 	// Walk through the docs folder to find all .md files
 	err := filepath.Walk(docFolderPath, func(path string, info os.FileInfo, err error) error {

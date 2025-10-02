@@ -22,6 +22,7 @@ with additional features for organizing, processing, and managing your documenta
 	cmd.InitCommandSync(rootCmd)
 	cmd.InitCommandWatch(rootCmd)
 	cmd.InitCommandSocket(rootCmd)
+	cmd.InitCommandTest(rootCmd)
 
 	rootCmd.Execute()
 	// Initialize the root command and add subcommands

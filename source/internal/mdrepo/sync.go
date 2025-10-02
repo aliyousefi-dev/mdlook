@@ -3,9 +3,7 @@ package mdrepo
 import "mdlook/source/internal/types"
 
 func (mdlook *MDLookManager) SyncNav() {
-	scanResult := mdlook.ScanDirectory()
-
-	renderMarkdown := mdlook.NavRender(scanResult)
+	renderMarkdown := mdlook.NavRender()
 	mdlook.CleanNav()
 	mdlook.WriteNav(renderMarkdown)
 }

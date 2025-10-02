@@ -40,7 +40,7 @@ func (mdlook *MDLookManager) GenerateDefaultNavFile() {
 
 // GenerateDocsFolder creates the docs folder and adds a default introduction.md file
 func (mdlook *MDLookManager) GenerateDocsFolder() {
-	docDirPath := mdlook.GetDocsFolder()
+	docDirPath := mdlook.GetDocsFolderPath()
 
 	// Check if the docs folder exists
 	if _, err := os.Stat(docDirPath); os.IsNotExist(err) {
