@@ -68,8 +68,6 @@ func (mdlook *MDLookManager) ScanNavTree() types.NavNode {
 		}
 	}
 
-	mdlook.mergeDirectoryFiles(rootNode)
-
 	return *rootNode
 }
 

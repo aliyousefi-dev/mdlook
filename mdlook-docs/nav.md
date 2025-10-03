@@ -1,20 +1,35 @@
 # MDLook
 
 - [architecture](docs/architecture.md)
+- [changelog](docs/changelog.md)
+- <span>commands</span>
+  - [serve](docs/commands/serve.md)
+  - [sync](docs/commands/sync.md)
 - [configs](docs/configs.md)
-- [cooking](docs/cooking.md)
+- <span>feat-dev</span>
+  - [box-icons](docs/feat-dev/box-icons.md)
+  - [mermaid-diagrams](docs/feat-dev/mermaid-diagrams.md)
+  - [searching](docs/feat-dev/searching.md)
+- [feat-dev](docs/feat-dev.md)
+- <span>features</span>
+  - [cooking](docs/features/cooking.md)
+  - [filenames](docs/features/filenames.md)
+  - [navigation](docs/features/navigation.md)
+- <span>go-refrences</span>
+  - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
+  - <span>types</span>
+    - [nav-item](docs/go-refrences/types/nav-item.md)
 - <span>help</span>
   - [help](docs/help/help.md)
   - [new](docs/help/new.md)
 - [internal-links](docs/internal-links.md)
-- [nav-item](docs/nav-item.md)
-- [navigation](docs/navigation.md)
 - [overview](docs/overview.md)
 - [quick-start](docs/quick-start.md)
-- [runtime-watcher](docs/runtime-watcher.md)
-- [sync](docs/sync.md)
-- <span>tools</span>
-  - [check](docs/tools/check.md)
-- [web-components](docs/web-components.md)
+- <span>web-components</span>
+  - [breadcrumbs](docs/web-components/breadcrumbs.md)
+  - [github-link-button](docs/web-components/github-link-button.md)
+  - [markdown-renderer](docs/web-components/markdown-renderer.md)
   - [nav-renderer](docs/web-components/nav-renderer.md)
-  - [new](docs/web-components/new.md)
+  - [print-button](docs/web-components/print-button.md)
+  - [search-button](docs/web-components/search-button.md)
+- [web-components](docs/web-components.md)
