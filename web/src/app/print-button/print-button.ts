@@ -6,4 +6,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './print-button.html',
   imports: [CommonModule],
 })
-export class PrintButtonComponent {}
+export class PrintButtonComponent {
+  printPage() {
+    window.print(); // This will trigger the browser's print dialog
+  }
+}

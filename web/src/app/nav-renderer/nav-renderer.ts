@@ -4,16 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MarkdownService } from '../services/markdown.service';
 import { marked } from 'marked'; // Import marked
-import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-
-@Pipe({ name: 'safeHtml' })
-export class SafeHtmlPipe implements PipeTransform {
-  constructor(private sanitized: DomSanitizer) {}
-  transform(value: string) {
-    return this.sanitized.bypassSecurityTrustHtml(value);
-  }
-}
+import { SafeHtmlPipe } from '../services/safeHtmlPipe';
 
 @Component({
   selector: 'app-nav-renderer',
@@ -61,7 +52,7 @@ export class NavRenderer implements OnInit {
       (match, href, attrs, text) => {
         // Remove .md extension from href
         const cleanHref = href.replace(/\.md$/, '');
-        return `<a routerLink="${cleanHref}" href="${cleanHref}"${attrs}>${text}</a>`;
+        return `<a routerLink="${cleanHref}" routerLinkActive="menu-active" href="${cleanHref}"${attrs}>${text}</a>`;
       }
     );
   }

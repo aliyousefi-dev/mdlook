@@ -13,3 +13,5 @@ It desinged spceficly for the Doc Creating for and make this process easy for al
 - Dev Live Reloading
 - Multi Themes
 - Bundle Export
+- Dynamic Links
+- Super Ultra Fast

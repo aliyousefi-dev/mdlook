@@ -21,7 +21,7 @@ func (mdlook *MDLookManager) NavRender() string {
 	var markdownContent strings.Builder
 
 	// Write the header (Markdown header)
-	_, err := markdownContent.WriteString(fmt.Sprintf("# %s\n\n", "Header"))
+	_, err := markdownContent.WriteString(fmt.Sprintf("# %s\n\n", mdlook.LoadConfig().DocName))
 	if err != nil {
 		log.Fatalf("error writing header: %v", err)
 	}

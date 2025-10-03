@@ -1,8 +1,10 @@
 {
 	"docname": "MDLook",
+	"appversion": "1.0.0",
 	"disableThemes": true,
 	"disablePrintOptions": true,
 	"disableMarkdownOptions": true,
 	"GitUrl": "https://github.com/user/repo",
+	"rtl": false,
 	"syncNav": true
 }

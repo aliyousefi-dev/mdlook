@@ -44,6 +44,11 @@ func (mdlook *MDLookManager) GetDocsFolderPath() string {
 	return docsFolder
 }
 
+func (mdlook *MDLookManager) GetWorkstationDir() string {
+	workstationDir := mdlook.WorkstationDir
+	return workstationDir
+}
+
 func (mdlook *MDLookManager) GetAssetsFolder() string {
 	workstationDir := mdlook.WorkstationDir
 	assetsFolder := filepath.Join(workstationDir, "assets")

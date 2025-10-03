@@ -9,6 +9,7 @@ import { ThemeDropdownComponent } from './theme-dropdown/theme-dropdown';
 import { MarkdownButtonComponent } from './markdown-button/markdown-button';
 import { SearchButtonComponent } from './search-button/search-button';
 import { PrintButtonComponent } from './print-button/print-button';
+import { GithubLinkButtonComponent } from './github-link-button/github-link-button';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { PrintButtonComponent } from './print-button/print-button';
     MarkdownButtonComponent,
     SearchButtonComponent,
     PrintButtonComponent,
+    GithubLinkButtonComponent,
   ],
   templateUrl: './app.html',
   styles: [

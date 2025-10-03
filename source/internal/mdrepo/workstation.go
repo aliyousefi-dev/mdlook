@@ -1,7 +1,9 @@
 package mdrepo
 
 import (
+	"encoding/json"
 	"log"
+	"mdlook/source/internal/types"
 	"os"
 	"path/filepath"
 )
@@ -11,6 +13,7 @@ func (mdlook *MDLookManager) CreateWorkspace() {
 	mdlook.GenerateAssetsFolder()
 	mdlook.GenerateDocsFolder()
 	mdlook.GenerateDefaultNavFile()
+	mdlook.GenerateConfigJsonFile()
 }
 
 // GenerateDefaultNavFile creates a default nav.md file in the docs folder
@@ -27,7 +30,7 @@ func (mdlook *MDLookManager) GenerateDefaultNavFile() {
 		defer file.Close()
 
 		// Write default content to the nav.md file
-		_, err = file.WriteString("# Documentation\n\n- [Introduction](introduction.md)\n")
+		_, err = file.WriteString("# Documentation\n\n- [introduction](docs/introduction.md)\n")
 		if err != nil {
 			log.Fatalf("error writing to nav file: %v", err)
 		}
@@ -54,7 +57,7 @@ func (mdlook *MDLookManager) GenerateDocsFolder() {
 
 		// Create a default introduction.md file
 		introFilePath := filepath.Join(docDirPath, "introduction.md")
-		err = os.WriteFile(introFilePath, []byte("# Introduction\nThis is the introduction to the documentation."), 0644)
+		err = os.WriteFile(introFilePath, []byte("# Introduction\n\nThis is the introduction to the documentation."), 0644)
 		if err != nil {
 			log.Fatalf("error creating introduction.md: %v", err)
 		}
@@ -91,4 +94,25 @@ func (mdlook *MDLookManager) GenerateAssetsFolder() {
 	} else {
 		log.Println("Assets folder already exists.")
 	}
+}
+
+func (mdlook *MDLookManager) GenerateConfigJsonFile() {
+	configPath := mdlook.GetConfigFilePath()
+
+	// Get the default config data
+	defaultConfig := types.GetDefaultConfigData()
+
+	// Marshal the config data into JSON
+	configData, err := json.MarshalIndent(defaultConfig, "", "  ")
+	if err != nil {
+		log.Fatalf("error marshaling config data: %v", err)
+	}
+
+	// Write the JSON data to the file
+	err = os.WriteFile(configPath, configData, 0644)
+	if err != nil {
+		log.Fatalf("error creating config.json: %v", err)
+	}
+
+	log.Println("Default config.json file created successfully.")
 }

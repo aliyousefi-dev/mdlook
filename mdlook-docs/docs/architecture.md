@@ -18,10 +18,6 @@ nav.md
     - img.png
 ```
 
-## Runtime Watcher
-
-it use a Event Based Watcher for the changes on the folders.
-
 ## Internal Renderer
 
 it uses the `MarkdownRendererComponent` to render the markdown.
