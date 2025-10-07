@@ -20,12 +20,6 @@ func (mdlook *MDLookManager) NavRender() string {
 	// Initialize a strings.Builder to efficiently build the markdown content
 	var markdownContent strings.Builder
 
-	// Write the header (Markdown header)
-	_, err := markdownContent.WriteString(fmt.Sprintf("# %s\n\n", mdlook.LoadConfig().DocName))
-	if err != nil {
-		log.Fatalf("error writing header: %v", err)
-	}
-
 	pages := mdlook.RenderNavTree(mdlook.ScanNavTree())
 
 	markdownContent.WriteString(pages)

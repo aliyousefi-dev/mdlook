@@ -2,7 +2,7 @@
 
 when you create a workstation. you can config that.
 
-```
+```json
 {
 	"docname": "MDLook",
 	"disableThemes": true,

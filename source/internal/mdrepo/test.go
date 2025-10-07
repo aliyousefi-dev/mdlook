@@ -71,53 +71,6 @@ func (mdlook *MDLookManager) ScanNavTree() types.NavNode {
 	return *rootNode
 }
 
-func (mdlook *MDLookManager) mergeDirectoryFiles(node *types.NavNode) {
-	if node == nil || len(node.Childs) == 0 {
-		return
-	}
-
-	var newChildren []*types.NavNode
-	mergedPaths := make(map[string]bool)
-
-	for _, child := range node.Childs {
-		if mergedPaths[child.Path] {
-			continue
-		}
-
-		if child.IsDir {
-			var matchingFile *types.NavNode
-
-			for _, sibling := range node.Childs {
-				if !sibling.IsDir && sibling.Path != child.Path {
-					pathWithoutExt := strings.TrimSuffix(sibling.Path, filepath.Ext(sibling.Path))
-					if pathWithoutExt == child.Path {
-						matchingFile = sibling
-						break
-					}
-				}
-			}
-
-			if matchingFile != nil {
-				matchingFile.Childs = append(matchingFile.Childs, child.Childs...)
-
-				newChildren = append(newChildren, matchingFile)
-
-				mergedPaths[child.Path] = true
-				mergedPaths[matchingFile.Path] = true
-
-			} else {
-				newChildren = append(newChildren, child)
-			}
-		} else if !mergedPaths[child.Path] {
-			newChildren = append(newChildren, child)
-		}
-
-		mdlook.mergeDirectoryFiles(child)
-	}
-
-	node.Childs = newChildren
-}
-
 // Helper function to determine if a path is a directory
 func isDirectory(path string) bool {
 	info, err := os.Stat(path)
@@ -149,7 +102,7 @@ func (mdlook *MDLookManager) RenderNavNode(node types.NavNode, depth int) string
 		// Create indentation based on depth
 		indent := strings.Repeat("  ", depth)
 		if child.IsDir {
-			result.WriteString(indent + "- ###" + child.GetNodeTitle() + "\n")
+			result.WriteString(indent + "- ### " + child.GetNodeTitle() + "\n")
 		} else {
 			result.WriteString(indent + "- [" + child.GetNodeTitle() + "](" + child.Path + ")\n")
 		}

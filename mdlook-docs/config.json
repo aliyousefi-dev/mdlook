@@ -6,6 +6,5 @@
 	"disableMarkdownButton": true,
 	"ToC": true,
 	"GitUrl": "https://github.com/user/repo",
-	"rtl": false,
-	"syncNav": true
+	"rtl": false
 }
