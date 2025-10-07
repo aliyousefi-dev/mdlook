@@ -7,6 +7,11 @@ export function customCodeRenderer(
 ): string | false {
   const { text, lang } = token;
 
+  if (lang === 'mermaid') {
+    // For Mermaid syntax, wrap the code in <div class="mermaid"> tags
+    return `${text}`;
+  }
+
   // Replace inline style in <pre> tag with class
   const codeHtml = text.replace(
     /<pre.*?>/,

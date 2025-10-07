@@ -36,6 +36,7 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
+    mermaid.initialize({ startOnLoad: true });
     console.log('Markdown Renderer Initialized');
     this.urlSub = this.urlService.getUrls().subscribe((urls: string[]) => {
       this.onUrlChanged(urls);
@@ -66,6 +67,13 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
       .subscribe(async (content) => {
         this.htmlContent = await this.convertMarkdownToHtml(content);
 
+        // Wait for the content to be fully injected into the DOM
+        setTimeout(() => {
+          mermaid.run({
+            querySelector: '.mermaid', // Ensure it targets only the mermaid elements
+          });
+        }, 200); // A small timeout to ensure rendering completion
+
         // After the content is fetched and set, call this function to process links
         this.renderLinksWithRouterLink();
       });
@@ -78,6 +86,11 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
         async: true,
         async highlight(code, lang, info) {
           try {
+            if (lang === 'mermaid') {
+              // For Mermaid syntax, wrap the code in <pre class="mermaid"> tags
+              return `<pre class="mermaid flex items-center justify-center bg-base-100">${code}</pre>`;
+            }
+
             const html = await codeToHtml(code, {
               lang: lang,
               theme: 'vitesse-dark',
@@ -103,7 +116,7 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
     // If content is not loaded yet, return
     if (!this.htmlContent) return;
 
-    const container = this.el.nativeElement.querySelector('.prose');
+    const container = this.el.nativeElement.querySelector('#markdown-content');
     const parser = new DOMParser();
     const doc = parser.parseFromString(this.htmlContent, 'text/html');
 

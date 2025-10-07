@@ -1,15 +1,27 @@
 <div class="p-10 h-full">
     <div class="flex justify-between items-start">
-        <!-- Rendered Markdown Content  -->
-        <div class="prose max-w-none" [innerHTML]="htmlContent | safeHtml">
+
+
+
+        <div id="markdown-content" class="prose max-w-none flex-1" [innerHTML]="htmlContent | safeHtml">
         </div>
 
-        <!-- Table of Contents (CoT) -->
-        <ul class="menu flex-none sticky top-20 max-h-screen overflow-y-auto text-base-content">
+
+        <ul class="menu border-l-1 sticky top-35 max-h-screen overflow-y-auto text-base-content 
+                   
+                   transition-all transform 
+                   duration-200 ease-in-out 
+                   
+                   w-0 opacity-0 pointer-events-none 
+                   
+                   md:w-70 md:opacity-100 md:pointer-events-auto
+                   
+                   md:translate-x-0 md:ml-13
+                   translate-x-full">
             <li class="menu-title">On This page</li>
-            <li><a href="">How to install</a></li>
-            <li><a href="">Usage</a></li>
-            <li><a href=""><i class='bx bxs-up-arrow-alt'></i> Back to the top </a></li>
+            <li><a href="#install">How to install</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#top"><i class='bx bxs-up-arrow-alt bx-sm'></i> Back to the top </a></li>
         </ul>
     </div>
 </div>
