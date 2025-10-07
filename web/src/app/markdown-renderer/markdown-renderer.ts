@@ -16,6 +16,7 @@ import { SafeHtmlPipe } from '../services/safeHtmlPipe';
 import customMarkdownRenderer from '../../markdown-renderer/customMarkdownRenderer';
 import { markedHighlight } from 'marked-highlight';
 import { codeToHtml } from 'shiki';
+import mermaid from 'mermaid';
 
 @Component({
   selector: 'app-markdown-renderer',

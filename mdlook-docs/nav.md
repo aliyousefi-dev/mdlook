@@ -1,7 +1,7 @@
 # MDLook
 
 - ## Getting Started
-  - [architecture](docs/architecture.md)
+  - [architecture {badge(beta)}](docs/architecture.md)
   - [changelog](docs/changelog.md)
   - ### commands
     - [export](docs/commands/export.md)

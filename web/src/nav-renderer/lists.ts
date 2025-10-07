@@ -20,7 +20,7 @@ function convertNestedUlToDetails(html: string): string {
 
       // We use the text content for the summary, not the full <h3> tag
       return `
-<li><details open>
+<li><details>
     <summary>${summaryContent}</summary>
     ${nestedUl}
 </details></li>`;
@@ -35,6 +35,12 @@ function addMenuClassToUl(html: string): string {
     /<(ul|ol)(.*?)>/,
     '<$1$2 class="menu w-full bg-base-100">'
   );
+}
+
+function addBadges(html: string): string {
+  return html.replace(/{badge\((.*?)\)}/g, (match, badgeText) => {
+    return `<span class="badge badge-xs badge-dash">${badgeText}</span>`;
+  });
 }
 
 export function customListRenderer(
@@ -66,6 +72,8 @@ export function customListRenderer(
   transformedHtml = convertNestedUlToDetails(transformedHtml);
 
   transformedHtml = addMenuClassToUl(transformedHtml);
+
+  transformedHtml = addBadges(transformedHtml);
 
   return transformedHtml;
 }
