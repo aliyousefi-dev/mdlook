@@ -4,6 +4,7 @@
   - [architecture {badge(beta)}](docs/architecture.md)
   - [changelog](docs/changelog.md)
   - [mermaid](docs/mermaid.md)
+  - [code hightlight](docs/code-highlight.md)
   - ### commands
     - [export](docs/commands/export.md)
     - [serve](docs/commands/serve.md)
