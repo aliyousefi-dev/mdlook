@@ -1,10 +1,8 @@
 .sidebar-sidenav {
   background: var(--b1);
-  z-index: 1 !important;
 }
 
 .sidebar-container {
   background: var(--b1);
   border-radius: 20px;
-  z-index: auto !important;
 }

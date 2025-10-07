@@ -1,27 +1,37 @@
 // customHeadingRenderer.ts
 import { Tokens } from 'marked';
-import js from '@shikijs/langs/javascript';
-import nord from '@shikijs/themes/nord';
-import { createHighlighterCoreSync } from 'shiki/core';
-import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 export function customCodeRenderer(
   this: any,
   token: Tokens.Code
 ): string | false {
-  const { text, type } = token;
+  const { text, lang } = token;
+
+  // Replace inline style in <pre> tag with class
+  const codeHtml = text.replace(
+    /<pre.*?>/,
+    '<pre class="shiki bg-neutral" tabindex="0">'
+  );
 
   const html = `
-  <div class="relative">
-        <div class="absolute top-2 right-2 flex items-center justify-end h-full">
-        <div class="tooltip tooltip-left self-start" data-tip="Copy to clipboard">
-            <button class="btn btn-circle btn-sm" aria-label="Copy to clipboard">
-                <i class="bx bx-clipboard bx-xs"></i>
-            </button>
-        </div>
+<div class="relative group">
+  <!-- Copy Button -->
+  <div class="absolute top-2 right-5 flex items-center justify-end h-full opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300 z-10">
+    <div class="tooltip tooltip-right self-start" data-tip="Copy to clipboard">
+      <button class="btn btn-circle btn-sm" aria-label="Copy to clipboard">
+        <i class="bx bx-clipboard bx-xs"></i>
+      </button>
     </div>
-  ${text}
-  </div>`;
+  </div>
+
+  <!-- Language Text -->
+  <div class="absolute  top-2 right-5 opacity-100 group-hover:opacity-0 transition-opacity duration-300 select-none">
+    <span class="text-xs text-white opacity-50">${lang}</span>
+  </div>
+
+  ${codeHtml}
+</div>
+`;
 
   // Return a placeholder immediately (since rendering is async)
   return html;
