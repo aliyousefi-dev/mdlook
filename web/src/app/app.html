@@ -11,15 +11,15 @@
                 <div class="w-full">
                     <div class="flex justify-between items-center w-full">
                         <div class=" flex">
-                            <button type="button" class="btn btn-ghost" (click)="drawer.toggle()">
+                            <button type="button" class="btn btn-ghost focus:outline-none" (click)="drawer.toggle()">
                                 <i class='bx  bx-menu bx-sm'></i>
                             </button>
-                            <doc-theme-dropdown></doc-theme-dropdown>
                             <doc-search-button></doc-search-button>
                         </div>
 
 
                         <div class="flex gap-1">
+                            <doc-theme-dropdown></doc-theme-dropdown>
                             <doc-github-link-button [repoUrl]="'https://github.com/ali'"></doc-github-link-button>
                             <doc-markdown-button></doc-markdown-button>
                             <doc-print-button></doc-print-button>
@@ -30,7 +30,7 @@
 
             </div>
 
-            <div class="p-10 bg-base-100">
+            <div class="bg-base-100">
                 <router-outlet></router-outlet>
             </div>
         </mat-drawer-content>

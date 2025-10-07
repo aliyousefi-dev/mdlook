@@ -11,8 +11,11 @@ import { CommonModule } from '@angular/common';
 import { MarkdownService } from '../services/markdown.service';
 import { UrlService } from '../services/url-service';
 import { Subscription } from 'rxjs';
-import { marked } from 'marked'; // Import marked
+import { marked, Marked } from 'marked'; // Import marked
 import { SafeHtmlPipe } from '../services/safeHtmlPipe';
+import customMarkdownRenderer from '../../markdown-renderer/customMarkdownRenderer';
+import { markedHighlight } from 'marked-highlight';
+import { codeToHtml } from 'shiki';
 
 @Component({
   selector: 'app-markdown-renderer',
@@ -43,6 +46,7 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
     this.renderLinksWithRouterLink();
   }
 
+  // Assuming this is part of a component/class method
   onUrlChanged(urls: string[]) {
     if (!urls || urls.length === 0) {
       console.warn('No valid URLs found!');
@@ -56,18 +60,41 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
     segments[segments.length - 1] = segments[segments.length - 1] + '.md';
     const mdUrl = '/' + segments.join('/');
 
-    this.markdownService.getMarkdownContent(mdUrl).subscribe((content) => {
-      this.htmlContent = this.convertMarkdownToHtml(content);
-      // After the content is fetched and set, call this function to process links
-      this.renderLinksWithRouterLink();
-    });
+    this.markdownService
+      .getMarkdownContent(mdUrl)
+      .subscribe(async (content) => {
+        this.htmlContent = await this.convertMarkdownToHtml(content);
+
+        // After the content is fetched and set, call this function to process links
+        this.renderLinksWithRouterLink();
+      });
   }
 
-  convertMarkdownToHtml(markdown: string): string {
-    // Convert markdown to HTML
-    const html = marked(markdown).toString();
+  async convertMarkdownToHtml(markdown: string): Promise<string> {
+    const marked = new Marked(
+      markedHighlight({
+        // We set async to true to indicate the highlight function is asynchronous.
+        async: true,
+        async highlight(code, lang, info) {
+          try {
+            const html = await codeToHtml(code, {
+              lang: lang,
+              theme: 'vitesse-dark',
+            });
+            return html;
+          } catch (error) {
+            console.error('Highlighting failed:', error);
+            return code;
+          }
+        },
+      })
+    );
 
-    // Add 'text-xl' class to the first <h1>
+    marked.use(customMarkdownRenderer);
+
+    const parsedHtml = await marked.parse(markdown);
+    let html = parsedHtml.toString();
+
     return html;
   }
 

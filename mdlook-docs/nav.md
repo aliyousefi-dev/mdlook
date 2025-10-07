@@ -1,35 +1,42 @@
 # MDLook
 
-- [architecture](docs/architecture.md)
-- [changelog](docs/changelog.md)
-- <span>commands</span>
-  - [serve](docs/commands/serve.md)
-  - [sync](docs/commands/sync.md)
-- [configs](docs/configs.md)
-- <span>feat-dev</span>
-  - [box-icons](docs/feat-dev/box-icons.md)
-  - [mermaid-diagrams](docs/feat-dev/mermaid-diagrams.md)
-  - [searching](docs/feat-dev/searching.md)
-- [feat-dev](docs/feat-dev.md)
-- <span>features</span>
-  - [cooking](docs/features/cooking.md)
-  - [filenames](docs/features/filenames.md)
-  - [navigation](docs/features/navigation.md)
-- <span>go-refrences</span>
-  - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
-  - <span>types</span>
-    - [nav-item](docs/go-refrences/types/nav-item.md)
-- <span>help</span>
-  - [help](docs/help/help.md)
-  - [new](docs/help/new.md)
-- [internal-links](docs/internal-links.md)
-- [overview](docs/overview.md)
-- [quick-start](docs/quick-start.md)
-- <span>web-components</span>
-  - [breadcrumbs](docs/web-components/breadcrumbs.md)
-  - [github-link-button](docs/web-components/github-link-button.md)
-  - [markdown-renderer](docs/web-components/markdown-renderer.md)
-  - [nav-renderer](docs/web-components/nav-renderer.md)
-  - [print-button](docs/web-components/print-button.md)
-  - [search-button](docs/web-components/search-button.md)
-- [web-components](docs/web-components.md)
+- ## Getting Started
+  - [architecture](docs/architecture.md)
+  - [changelog](docs/changelog.md)
+  - ### commands
+    - [export](docs/commands/export.md)
+    - [serve](docs/commands/serve.md)
+    - [sync](docs/commands/sync.md)
+    - [version](docs/commands/version.md)
+    - [watch](docs/commands/watch.md)
+  - [configs](docs/configs.md)
+-
+- ## How Solve
+  - ### feat-dev
+    - [box-icons](docs/feat-dev/box-icons.md)
+    - [mermaid-diagrams](docs/feat-dev/mermaid-diagrams.md)
+    - [searching](docs/feat-dev/searching.md)
+    - [versioning](docs/feat-dev/versioning.md)
+  - [feat-dev](docs/feat-dev.md)
+  - ### features
+    - [cooking](docs/features/cooking.md)
+    - [filenames](docs/features/filenames.md)
+    - [navigation](docs/features/navigation.md)
+  - ### go-refrences
+    - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
+    - ### types
+      - [nav-item](docs/go-refrences/types/nav-item.md)
+  - ### help
+    - [help](docs/help/help.md)
+    - [new](docs/help/new.md)
+  - [internal-links](docs/internal-links.md)
+  - [overview](docs/overview.md)
+  - [quick-start](docs/quick-start.md)
+  - ### web-components
+    - [breadcrumbs](docs/web-components/breadcrumbs.md)
+    - [github-link-button](docs/web-components/github-link-button.md)
+    - [markdown-renderer](docs/web-components/markdown-renderer.md)
+    - [nav-renderer](docs/web-components/nav-renderer.md)
+    - [print-button](docs/web-components/print-button.md)
+    - [search-button](docs/web-components/search-button.md)
+  - [web-components](docs/web-components.md)

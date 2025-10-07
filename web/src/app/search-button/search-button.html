@@ -1,1 +1,16 @@
-<button class="btn btn-circle btn-ghost"><i class='bx  bx-search bx-xs '></i></button>
+<!-- Mobile-first: Button with icon only (for small screens) -->
+<button #searchInput class="btn btn-square btn-ghost sm:hidden">
+    <i class="bx bx-search bx-xs"></i>
+</button>
+
+<!-- Button with icon, text, and shortcut (for larger screens) -->
+<button #searchInput
+    class="btn input input-ghost font-thin hover:bg-base-200 cursor-pointer focus:outline-none hidden sm:flex items-center">
+    <i class="bx bx-search bx-xs"></i>
+    <span class="grow text-left px-1 opacity-80 text-xs">Search…</span>
+    <kbd class="kbd kbd-sm opacity-50"><span class="me-1 text-sm">⌘</span>K</kbd>
+</button>
+
+@if (false) {
+<doc-search-modal class="searchmodal"></doc-search-modal>
+}

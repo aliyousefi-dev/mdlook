@@ -8,14 +8,14 @@ it serve all markdowns. and then render them on client frontend locally. you can
 
 it serve all markdown as public statics
 
-```
-nav.md
+```yaml
+- nav.md
 - docs
-    - content01.md
-    - content02.md
-    - content03.md
+  - content01.md
+  - content02.md
+  - content03.md
 - assets
-    - img.png
+  - img.png
 ```
 
 ## Internal Renderer
@@ -32,10 +32,11 @@ The Sync function sync the `nav.md` file.
 
 here you can see the nav structre file `nav.md`
 
-```
+```md
 # MDLook <!-- Doc Header Title -->
 
 <!-- Pages -->
+
 - [Overview](docs/overview.md)
 - [Quick Start](docs/quick-start.md)
 - [Architecture](docs/architecture.md)
@@ -45,7 +46,6 @@ here you can see the nav structre file `nav.md`
 - [nav-renderer](docs/nav-renderer.md)
 - [init-doc](docs/init-doc.md)
 - [export-doc](docs/export-doc.md)
-
 ```
 
 > by default Sync is enabled for auto nav. you can disable that on the `config.json` file.

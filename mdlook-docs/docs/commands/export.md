@@ -1,0 +1,13 @@
+# Export Command
+
+this command used for bundle the docs to a servable file.
+
+---
+
+### Usage
+
+here is an example of usage
+
+```bat
+mdlook export <output>
+```

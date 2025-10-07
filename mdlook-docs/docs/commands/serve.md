@@ -1,15 +1,8 @@
-# Serve
+# Serve Command
 
-After you Export your docs with
-
-```
-mdbook export --output <path>
-```
-
-you can serve the index.html and all thing with any prgramming language or server your want.
-
-also the mdlook provide and internally serve functionlality that you can use that.
+it used for serve the docs in production environments.
 
 ```
-mdbook serve <path>
+mdlook serve <workstation-path>
 ```
+    

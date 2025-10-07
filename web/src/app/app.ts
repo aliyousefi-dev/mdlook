@@ -27,18 +27,7 @@ import { GithubLinkButtonComponent } from './github-link-button/github-link-butt
     GithubLinkButtonComponent,
   ],
   templateUrl: './app.html',
-  styles: [
-    `
-      .sidebar-container {
-        background: var(--b1);
-      }
-
-      .sidebar-sidenav {
-        background: var(--b1);
-        border-radius: 0px;
-      }
-    `,
-  ],
+  styleUrl: './app.css',
 })
 export class App implements OnInit, OnDestroy {
   private markdownService = inject(MarkdownService);

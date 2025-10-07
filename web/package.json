@@ -31,7 +31,9 @@
     "@tailwindcss/postcss": "^4.1.13",
     "boxicons": "^2.1.4",
     "daisyui": "^5.1.25",
+    "highlight.js": "^11.11.1",
     "marked": "^15.0.12",
+    "marked-highlight": "^2.2.2",
     "ngx-markdown": "^20.0.0",
     "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
@@ -52,6 +54,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "shiki": "^3.13.0",
     "typescript": "~5.8.2",
     "webpack-shell-plugin-next": "^2.3.3"
   }

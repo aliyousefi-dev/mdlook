@@ -149,7 +149,7 @@ func (mdlook *MDLookManager) RenderNavNode(node types.NavNode, depth int) string
 		// Create indentation based on depth
 		indent := strings.Repeat("  ", depth)
 		if child.IsDir {
-			result.WriteString(indent + "- <span>" + child.GetNodeTitle() + "</span>\n")
+			result.WriteString(indent + "- ###" + child.GetNodeTitle() + "\n")
 		} else {
 			result.WriteString(indent + "- [" + child.GetNodeTitle() + "](" + child.Path + ")\n")
 		}
