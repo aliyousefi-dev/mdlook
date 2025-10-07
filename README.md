@@ -17,3 +17,6 @@ to create workstation
 use `mdlook watch .` on worksation to live reload
 
 use `mdlook export` on workstation to export your docs as index.html servable.
+
+you can serve the page with any language you prefer.
+also mdlook provide `mdlook serve .` for production serve if you want.
