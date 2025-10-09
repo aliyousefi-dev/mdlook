@@ -31,7 +31,7 @@ var initCmd = &cobra.Command{
 		// Initialize the MDLookManager with the target path
 		mdmanager := mdrepo.NewMDLookManager(targetPath)
 
-		mdmanager.CreateWorkspace()
+		mdmanager.Workstation.CreateWorkspace()
 
 		fmt.Println("Initialized empty ova repository.")
 	},

@@ -1,4 +1,4 @@
-package mdrepo
+package workstation
 
 import (
 	"encoding/json"
@@ -8,17 +8,9 @@ import (
 	"path/filepath"
 )
 
-// CreateWorkspace initializes the workspace by creating necessary folders and files with content
-func (mdlook *MDLookManager) CreateWorkspace() {
-	mdlook.GenerateAssetsFolder()
-	mdlook.GenerateDocsFolder()
-	mdlook.GenerateDefaultNavFile()
-	mdlook.GenerateConfigJsonFile()
-}
-
 // GenerateDefaultNavFile creates a default nav.md file in the docs folder
-func (mdlook *MDLookManager) GenerateDefaultNavFile() {
-	navFilePath := mdlook.GetNavFilePath()
+func (workstation *Workstation) GenerateDefaultNavFile() {
+	navFilePath := workstation.GetNavFilePath()
 
 	// Check if the nav file already exists
 	if _, err := os.Stat(navFilePath); os.IsNotExist(err) {
@@ -42,8 +34,8 @@ func (mdlook *MDLookManager) GenerateDefaultNavFile() {
 }
 
 // GenerateDocsFolder creates the docs folder and adds a default introduction.md file
-func (mdlook *MDLookManager) GenerateDocsFolder() {
-	docDirPath := mdlook.GetDocsFolderPath()
+func (workstation *Workstation) GenerateDocsFolder() {
+	docDirPath := workstation.GetDocsDir()
 
 	// Check if the docs folder exists
 	if _, err := os.Stat(docDirPath); os.IsNotExist(err) {
@@ -68,9 +60,8 @@ func (mdlook *MDLookManager) GenerateDocsFolder() {
 	}
 }
 
-// GenerateAssetsFolder creates the assets folder and adds default placeholder files (e.g., image or CSS)
-func (mdlook *MDLookManager) GenerateAssetsFolder() {
-	assetsDirPath := mdlook.GetAssetsFolder()
+func (workstation *Workstation) GenerateAssetsFolder() {
+	assetsDirPath := workstation.GetAssetsDir()
 
 	// Check if the assets folder exists
 	if _, err := os.Stat(assetsDirPath); os.IsNotExist(err) {
@@ -96,8 +87,8 @@ func (mdlook *MDLookManager) GenerateAssetsFolder() {
 	}
 }
 
-func (mdlook *MDLookManager) GenerateConfigJsonFile() {
-	configPath := mdlook.GetConfigFilePath()
+func (workstation *Workstation) GenerateConfigJsonFile() {
+	configPath := workstation.GetConfigFilePath()
 
 	// Get the default config data
 	defaultConfig := types.GetDefaultConfigData()

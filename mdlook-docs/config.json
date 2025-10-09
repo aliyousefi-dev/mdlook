@@ -1,10 +1,11 @@
 {
 	"docname": "MDLook",
-	"appversion": "1.0.0",
+	"appversion": "v0.1-beta",
 	"disableThemes": true,
 	"disablePrintButton": true,
 	"disableMarkdownButton": true,
 	"ToC": true,
 	"GitUrl": "https://github.com/user/repo",
-	"rtl": false
+	"rtl": false,
+	"sort_nav_by": "alphabetical"
 }

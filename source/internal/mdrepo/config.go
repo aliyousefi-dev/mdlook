@@ -9,7 +9,7 @@ import (
 
 func (mdlook *MDLookManager) LoadConfig() types.MdLookConfig {
 	// Load the configuration from the config.json file
-	configFilePath := mdlook.GetConfigFilePath()
+	configFilePath := mdlook.Workstation.GetConfigFilePath()
 	file, err := os.Open(configFilePath)
 	if err != nil {
 		log.Printf("Error opening config file: %v", err)

@@ -1,6 +1,7 @@
 // customNavRenderer.ts
 import { MarkedExtension } from 'marked';
 import { customCodeRenderer } from './code';
+import { customParagraphRenderer } from './paragraph';
 import mermaid from 'mermaid';
 
 const customMarkdownRenderer: MarkedExtension = {

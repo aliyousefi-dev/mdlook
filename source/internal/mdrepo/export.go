@@ -75,8 +75,8 @@ func CopyDir(src, dst string) error {
 }
 
 func (mdlook *MDLookManager) Export() {
-	webUIPath := mdlook.GetWebUIFolderPath()
-	workstationDir := mdlook.GetWorkstationDir()
+	webUIPath := mdlook.GetWebTemplateDir()
+	workstationDir := mdlook.Workstation.GetWorkstationDir()
 
 	// Define the export directory path
 	exportDir := filepath.Join(workstationDir, "export")

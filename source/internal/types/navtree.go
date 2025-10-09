@@ -6,9 +6,10 @@ import (
 )
 
 type NavNode struct {
-	Path   string     `json:"path"`   // Path to the corresponding markdown file
-	Childs []*NavNode `json:"childs"` // Child navigation item
-	IsDir  bool       `json:"is_dir"` // Indicates if the item is a directory
+	Path     string            `json:"path"`     // Path to the corresponding markdown file
+	Childs   []*NavNode        `json:"childs"`   // Child navigation item
+	Metadata *MarkdownMetaData `json:"metadata"` // Metadata associated with the navigation item
+	IsDir    bool              `json:"is_dir"`   // Indicates if the item is a directory
 }
 
 func NewNavNode(path string, isDir bool) *NavNode {

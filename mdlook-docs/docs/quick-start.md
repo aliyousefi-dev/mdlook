@@ -1,3 +1,9 @@
+<!--
+{
+	"nav_order": 2
+}
+-->
+
 # Quick Start
 
 here we can work on thing that we can do more.

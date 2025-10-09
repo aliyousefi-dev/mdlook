@@ -50,7 +50,7 @@ func (s *WebServer) Start() {
 	}
 
 	// Get paths
-	webUIPath := s.mdlook.GetWebUIFolderPath()
+	webUIPath := s.mdlook.GetWebTemplateDir()
 	indexHtmlPath := s.mdlook.GetIndexHtmlPath()
 	workspacePath := s.mdlook.WorkstationDir
 

@@ -1,24 +1,24 @@
-- [architecture](docs/architecture.md)
-- [changelog](docs/changelog.md)
-- [code-highlight](docs/code-highlight.md)
+- [overview](docs/overview.md)
+- [quick-start](docs/quick-start.md)
+- [feat-dev](docs/feat-dev.md)
+- ### features
+  - [cooking](docs/features/cooking.md)
+  - [filenames](docs/features/filenames.md)
+  - [navigation](docs/features/navigation.md)
 - ### commands
   - [export](docs/commands/export.md)
   - [serve](docs/commands/serve.md)
   - [sync](docs/commands/sync.md)
   - [version](docs/commands/version.md)
   - [watch](docs/commands/watch.md)
+- [commands](docs/commands.md)
 - [configs](docs/configs.md)
-- [cutome-ui-template](docs/cutome-ui-template.md)
-- ### feat-dev
-  - [box-icons](docs/feat-dev/box-icons.md)
-  - [mermaid-diagrams](docs/feat-dev/mermaid-diagrams.md)
-  - [searching](docs/feat-dev/searching.md)
-  - [versioning](docs/feat-dev/versioning.md)
-- [feat-dev](docs/feat-dev.md)
-- ### features
-  - [cooking](docs/features/cooking.md)
-  - [filenames](docs/features/filenames.md)
-  - [navigation](docs/features/navigation.md)
+- ### external
+  - [box-icon](docs/external/box-icon.md)
+  - [mermaid](docs/external/mermaid.md)
+- ### advance
+  - [cutome-ui-template](docs/advance/cutome-ui-template.md)
+- [code-highlight](docs/code-highlight.md)
 - ### go-refrences
   - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
   - ### types
@@ -27,9 +27,8 @@
   - [help](docs/help/help.md)
   - [new](docs/help/new.md)
 - [internal-links](docs/internal-links.md)
-- [mermaid](docs/mermaid.md)
-- [overview](docs/overview.md)
-- [quick-start](docs/quick-start.md)
+- [changelog](docs/changelog.md)
+- [architecture](docs/architecture.md)
 - ### web-components
   - [breadcrumbs](docs/web-components/breadcrumbs.md)
   - [github-link-button](docs/web-components/github-link-button.md)

@@ -10,6 +10,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var disableSync bool
+
 var watchCmd = &cobra.Command{
 	Use:   "watch [path]",
 	Short: "Watch for changes in the specified folder and auto-reload",
@@ -34,15 +36,17 @@ var watchCmd = &cobra.Command{
 		// Convert the backslashes to forward slashes
 		targetPath = filepath.ToSlash(targetPath)
 
-		// Create a new instance of MDLookManager with the specified directory
+		// Create a new instance of MDLookManager with the specified directory and disablesync flag
 		mdManager := mdrepo.NewMDLookManager(targetPath)
 
-		devServer := servers.NewDevServer("localhost", "8080", mdManager)
+		devServer := servers.NewDevServer("localhost", "8080", mdManager, disableSync)
 
 		devServer.Start()
 	},
 }
 
 func InitCommandWatch(rootCmd *cobra.Command) {
+	// Add disablesync flag
+	watchCmd.Flags().BoolVarP(&disableSync, "disablesync", "d", false, "Disable sync feature")
 	rootCmd.AddCommand(watchCmd)
 }

@@ -31,11 +31,8 @@ var testCmd = &cobra.Command{
 		// Initialize the MDLookManager with the target path
 		mdmanager := mdrepo.NewMDLookManager(targetPath)
 
-		// Call SyncNav to synchronize navigation files
-		tree := mdmanager.ScanNavTree()
-
 		// Print the navigation tree with dashes
-		str := mdmanager.RenderNavTree(tree)
+		str := mdmanager.Renderer.JsonRender()
 
 		fmt.Println(str)
 
