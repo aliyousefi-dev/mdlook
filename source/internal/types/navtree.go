@@ -21,6 +21,9 @@ func NewNavNode(path string, isDir bool) *NavNode {
 }
 
 func (n *NavNode) GetNodeTitle() string {
+	if n.Metadata != nil && n.Metadata.NavTitle != "" {
+		return n.Metadata.NavTitle
+	}
 	// Use filepath.Base to get the last part of the path (filename or directory name)
 	if n.IsDir {
 		return filepath.Base(n.Path)

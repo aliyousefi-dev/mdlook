@@ -1,4 +1,9 @@
-<!-- navOrder=1 -->
+<!--
+{
+	"nav_order": 3,
+  "nav_title": "Architecture"
+}
+-->
 
 # Architecture
 

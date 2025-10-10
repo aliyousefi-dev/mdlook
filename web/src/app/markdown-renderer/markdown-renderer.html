@@ -6,7 +6,14 @@
         <div id="markdown-content" class="prose max-w-200 flex-1" [innerHTML]="htmlContent | safeHtml">
         </div>
 
-
-        <app-table-of-contents [mdContent]="mdContent"></app-table-of-contents>
+        <div class="sticky top-35 right-30 max-h-screen overflow-y-auto text-base-content 
+                   transition-all transform 
+                   duration-200 ease-in-out 
+                   w-0 opacity-0 pointer-events-none 
+                   xl:w-70 xl:opacity-100 xl:pointer-events-auto
+                   xl:translate-x-0 xl:ml-13
+                   translate-x-full">
+            <app-table-of-contents [mdContent]="mdContent"></app-table-of-contents>
+        </div>
     </div>
 </div>

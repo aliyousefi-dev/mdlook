@@ -1,10 +1,17 @@
-# Export Command
+<!--
+{
+	"nav_order": 4,
+    "nav_title": "Commands"
+}
+-->
+
+# All Commands
 
 this command used for bundle the docs to a servable file.
 
 ---
 
-### Usage
+### Commnad lists
 
 here is an example of usage
 

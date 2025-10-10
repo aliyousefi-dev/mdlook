@@ -1,6 +1,7 @@
 <!--
 {
-	"nav_order": 2
+	"nav_order": 2,
+	"nav_title": "Quick Start"
 }
 -->
 

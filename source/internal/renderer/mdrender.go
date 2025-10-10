@@ -20,6 +20,14 @@ func SortNavNodes(nodes []*types.NavNode) {
 			orderJ = nodes[j].Metadata.NavOrder
 		}
 
+		// Directories should always be at the end
+		if nodes[i].IsDir && !nodes[j].IsDir {
+			return false // i is dir, j is file: file first
+		}
+		if !nodes[i].IsDir && nodes[j].IsDir {
+			return true // i is file, j is dir: file first
+		}
+
 		// If both are 0 or undefined, they are treated as equal
 		if orderI == 0 && orderJ == 0 {
 			return false

@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { MarkdownService } from '../services/markdown.service';
 import { UrlService } from '../services/url-service';
 import { Subscription } from 'rxjs';
-import { marked, Marked } from 'marked'; // Import marked
+import { Marked } from 'marked'; // Import marked
 import { SafeHtmlPipe } from '../services/safeHtmlPipe';
 import customMarkdownRenderer from '../../markdown-renderer/customMarkdownRenderer';
 import { markedHighlight } from 'marked-highlight';
