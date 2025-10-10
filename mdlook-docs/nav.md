@@ -1,6 +1,18 @@
+- [md-metadata](docs/md-metadata.md)
 - [overview](docs/overview.md)
 - [quick-start](docs/quick-start.md)
 - [feat-dev](docs/feat-dev.md)
+- ### go-refrences
+  - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
+  - ### types
+    - [nav-item](docs/go-refrences/types/nav-item.md)
+- [commands](docs/commands.md)
+- [configs](docs/configs.md)
+- ### external
+  - [box-icon](docs/external/box-icon.md)
+  - [mermaid](docs/external/mermaid.md)
+- ### advance
+  - [cutome-ui-template](docs/advance/cutome-ui-template.md)
 - ### features
   - [cooking](docs/features/cooking.md)
   - [filenames](docs/features/filenames.md)
@@ -11,24 +23,15 @@
   - [sync](docs/commands/sync.md)
   - [version](docs/commands/version.md)
   - [watch](docs/commands/watch.md)
-- [commands](docs/commands.md)
-- [configs](docs/configs.md)
-- ### external
-  - [box-icon](docs/external/box-icon.md)
-  - [mermaid](docs/external/mermaid.md)
-- ### advance
-  - [cutome-ui-template](docs/advance/cutome-ui-template.md)
-- [code-highlight](docs/code-highlight.md)
-- ### go-refrences
-  - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
-  - ### types
-    - [nav-item](docs/go-refrences/types/nav-item.md)
 - ### help
   - [help](docs/help/help.md)
   - [new](docs/help/new.md)
+- [images](docs/images.md)
 - [internal-links](docs/internal-links.md)
+- [code-highlight](docs/code-highlight.md)
 - [changelog](docs/changelog.md)
 - [architecture](docs/architecture.md)
+- [toc](docs/toc.md)
 - ### web-components
   - [breadcrumbs](docs/web-components/breadcrumbs.md)
   - [github-link-button](docs/web-components/github-link-button.md)
@@ -36,4 +39,3 @@
   - [nav-renderer](docs/web-components/nav-renderer.md)
   - [print-button](docs/web-components/print-button.md)
   - [search-button](docs/web-components/search-button.md)
-- [web-components](docs/web-components.md)

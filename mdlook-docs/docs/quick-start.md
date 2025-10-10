@@ -13,7 +13,7 @@ here we can work on thing that we can do more.
 Its very simple to create a Doc Workstation to work.
 this ask you to pick a name for you docs.
 
-```bash
+```batch
 mdlook init .
 ```
 
@@ -21,7 +21,7 @@ mdlook init .
 
 then you can watch your doc. open the brwoser the default host is `localhost:8080`
 
-```bash
+```batch
 mdlook watch .
 ```
 
@@ -30,8 +30,16 @@ mdlook watch .
 after you finished your work and its ready to make that public do this command.
 this bundle you work to be as servable things.
 
-```bash
+```batch
 mdlook export --output <path>
 ```
 
 > By default it export to `dist` folder.
+
+### Serve (Production)
+
+then you can serve your bundled documentation for production use. This will start a server to host your exported docs.
+
+```batch
+mdlook serve <path>
+```

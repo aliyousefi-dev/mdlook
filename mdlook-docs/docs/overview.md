@@ -16,8 +16,8 @@ It desinged spceficly for the Doc Creating for and make this process easy for al
 
 ## Features
 
-- Dev Live Reloading
+- Live Reloading (Dev Mode)
 - Multi Themes
 - Bundle Export
-- Dynamic Links
-- Super Ultra Fast
+- Mairmaid Support
+- Code Highlight Support

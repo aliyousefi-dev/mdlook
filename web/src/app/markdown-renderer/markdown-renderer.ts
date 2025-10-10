@@ -17,11 +17,12 @@ import customMarkdownRenderer from '../../markdown-renderer/customMarkdownRender
 import { markedHighlight } from 'marked-highlight';
 import { codeToHtml } from 'shiki';
 import mermaid from 'mermaid';
+import { TableOfContents } from '../table-of-contents/table-of-contents';
 
 @Component({
   selector: 'app-markdown-renderer',
   standalone: true,
-  imports: [CommonModule, SafeHtmlPipe],
+  imports: [CommonModule, SafeHtmlPipe, TableOfContents],
   templateUrl: './markdown-renderer.html',
 })
 export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
@@ -32,11 +33,12 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
   urls: string[] = [];
 
   htmlContent: string = '';
+  mdContent: string = '';
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
-    mermaid.initialize({ startOnLoad: true });
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
     console.log('Markdown Renderer Initialized');
     this.urlSub = this.urlService.getUrls().subscribe((urls: string[]) => {
       this.onUrlChanged(urls);
@@ -66,6 +68,7 @@ export class MarkdownRenderer implements OnInit, OnDestroy, AfterViewInit {
       .getMarkdownContent(mdUrl)
       .subscribe(async (content) => {
         this.htmlContent = await this.convertMarkdownToHtml(content);
+        this.mdContent = content; // Store the raw Markdown content
 
         // Wait for the content to be fully injected into the DOM
         setTimeout(() => {

@@ -1,0 +1,14 @@
+<ul class="menu border-l-1 sticky top-35 max-h-screen overflow-y-auto text-base-content 
+                   transition-all transform 
+                   duration-200 ease-in-out 
+                   w-0 opacity-0 pointer-events-none 
+                   md:w-70 md:opacity-100 md:pointer-events-auto
+                   md:translate-x-0 md:ml-13
+                   translate-x-full">
+    <li class="menu-title">On This page</li>
+    <ng-container *ngFor="let h of headings">
+        <li [style.paddingLeft.px]="(h.level - 1) * 12">
+            <a [href]="'#' + h.id">{{ h.text }}</a>
+        </li>
+    </ng-container>
+</ul>
