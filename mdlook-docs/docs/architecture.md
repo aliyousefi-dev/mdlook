@@ -13,10 +13,8 @@ it serve all markdowns. and then render them on client frontend locally. you can
 
 ```mermaid
     graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    ServeMarkdown-->FetchMarkdownsOnClient;
+    FetchMarkdownsOnClient-->RenderOnWeb;
 ```
 
 ## Static Serve

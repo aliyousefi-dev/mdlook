@@ -6,7 +6,7 @@
 
         <mat-drawer-content>
 
-            <div class="navbar sticky top-0 backdrop-blur flex flex-col z-30 text-base-content bg-base-100/90">
+            <div class="navbar sticky top-0 backdrop-blur flex flex-col z-10 text-base-content bg-base-100/90">
 
                 <div class="w-full">
                     <div class="flex justify-between items-center w-full">
@@ -16,6 +16,7 @@
                             </button>
                             <doc-search-button></doc-search-button>
                         </div>
+
 
 
                         <div class="flex gap-1">
@@ -30,11 +31,22 @@
 
             </div>
 
-            <div class="bg-base-100">
+            <div class="bg-base-100 ">
+
+
                 <router-outlet></router-outlet>
             </div>
+
+
+
         </mat-drawer-content>
+
+
 
     </mat-drawer-container>
 
+
+
 </div>
+
+<doc-search-modal></doc-search-modal>

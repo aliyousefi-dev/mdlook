@@ -6,4 +6,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './search-modal.html',
   imports: [CommonModule],
 })
-export class SearchModalComponent {}
+export class SearchModalComponent {
+  loading = false;
+  private loadingTimeout: any;
+
+  onInput() {
+    this.loading = true;
+    clearTimeout(this.loadingTimeout);
+    this.loadingTimeout = setTimeout(() => {
+      this.loading = false;
+    }, 1000); // 1 second
+  }
+}
