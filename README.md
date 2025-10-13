@@ -5,12 +5,10 @@ MDLook is currently in beta and under active development. It provides a command-
 https://github.com/user-attachments/assets/7855e753-6067-46fd-97e5-901b9d767bb4
 
 ## How it Works?
-
-<img width="1467" height="897" alt="image" src="https://github.com/user-attachments/assets/6c2e7c23-9f57-4cfa-a48f-a1fcca1b8c0d" />
-
 it serve all markdowns. and then render them on client frontend locally.
 you can serve the output with anything.
-it using two renderer . the nav renderer that read from nav.md and the markdown renderer that read from your markdowns.
+it using two renderer .
+the nav renderer that read from nav.md and the markdown renderer that read from your markdowns.
 and convert them to an html page.
 
 ## Quick Start
