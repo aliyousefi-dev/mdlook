@@ -4,13 +4,17 @@
 - [Architecture](docs/architecture.md)
 - [feat-dev](docs/feat-dev.md)
 - [Commands](docs/commands.md)
-- [md-metadata](docs/md-metadata.md)
-- [code-highlight](docs/code-highlight.md)
-- [toc](docs/toc.md)
-- [changelog](docs/changelog.md)
-- [configs](docs/configs.md)
-- [internal-links](docs/internal-links.md)
 - [images](docs/images.md)
+- [cooking](docs/cooking.md)
+- [toc](docs/toc.md)
+- [configs](docs/configs.md)
+- [changelog](docs/changelog.md)
+- [code-highlight](docs/code-highlight.md)
+- [md-metadata](docs/md-metadata.md)
+- [internal-links](docs/internal-links.md)
+- ### external
+  - [box-icon](docs/external/box-icon.md)
+  - [mermaid](docs/external/mermaid.md)
 - ### help
   - [help](docs/help/help.md)
   - [new](docs/help/new.md)
@@ -18,8 +22,6 @@
   - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
   - ### types
     - [nav-item](docs/go-refrences/types/nav-item.md)
-- ### advance
-  - [cutome-ui-template](docs/advance/cutome-ui-template.md)
 - ### features
   - [cooking](docs/features/cooking.md)
   - [filenames](docs/features/filenames.md)
@@ -30,9 +32,8 @@
   - [sync](docs/commands/sync.md)
   - [version](docs/commands/version.md)
   - [watch](docs/commands/watch.md)
-- ### external
-  - [box-icon](docs/external/box-icon.md)
-  - [mermaid](docs/external/mermaid.md)
+- ### advance
+  - [cutome-ui-template](docs/advance/cutome-ui-template.md)
 - ### web-components
   - [breadcrumbs](docs/web-components/breadcrumbs.md)
   - [github-link-button](docs/web-components/github-link-button.md)

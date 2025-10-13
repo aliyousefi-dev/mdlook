@@ -26,6 +26,14 @@ then you can watch your doc. open the brwoser the default host is `localhost:808
 mdlook watch .
 ```
 
+### Cooking
+
+some features like searching need the cooking you can doing this with this command.
+
+```batch
+mdlook cooking <workstation-path>
+```
+
 ### Export & Bundle
 
 after you finished your work and its ready to make that public do this command.

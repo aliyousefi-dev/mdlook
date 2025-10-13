@@ -8,36 +8,44 @@
         </label>
 
         <!-- Loading Spinner -->
-        <div *ngIf="loading" class="flex justify-center py-5">
+        @if (loading) {
+        <div class="flex justify-center py-5">
             <span class="loading loading-spinner loading-xs"></span>
         </div>
+        }
 
-        <!-- Search Results -->
-        <div *ngIf="!loading && searchResults.length > 0" class="py-5 overflow-y-auto flex-1">
-            <div *ngFor="let result of searchResults">
-                <a (click)="CloseModal()" [routerLink]="result.path" class="btn w-full flex justify-start">
-                    <div class="flex justify-between w-full gap-2">
-                        <div class="flex gap-2">
-                            <i class="bx bx-file bx-xs"></i>
-                            <span>{{ result.title }}</span>
-                        </div>
-                        <div class="flex gap-2">
-                            <span class="text-xs">{{ result.path }}</span>
-                            <span>↩︎</span>
-                        </div>
+
+        @if (!loading && searchResults.length > 0) {
+        <div class="py-5 overflow-y-auto flex-1">
+            @for (result of searchResults; track $index) {
+            <a (click)="CloseModal()" [routerLink]="result.path" class="btn w-full flex justify-start">
+                <div class="flex justify-between w-full gap-2">
+                    <div class="flex gap-2">
+                        <i class="bx bx-file bx-xs"></i>
+                        <span>{{ result.title }}</span>
                     </div>
-                </a>
-
-                <!-- Display snippet of the content below the title with highlighted search term -->
-                <div class="py-2 text-xs text-gray-600" [innerHTML]="getSnippet(result.content)">
+                    <div class="flex gap-2">
+                        <span class="text-xs">{{ result.path }}</span>
+                        <span>↩︎</span>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </a>
 
+            <!-- Display snippet of the content below the title with highlighted search term -->
+            <div class="py-2 text-xs text-gray-600" [innerHTML]="getSnippet(result.content)">
+            </div>
+            }
+        </div>
+        }
+
+
+        @if (!loading && searchResults.length === 0) {
         <!-- No Results Found Message -->
-        <div *ngIf="!loading && searchResults.length === 0" class="py-5">
+        <div class="py-5">
             <span>No results found for "{{ query }}"</span>
         </div>
+        }
+
 
         <!-- See All Results Link -->
         <div class="w-full flex justify-center pt-4">

@@ -64,7 +64,7 @@ export class App implements OnInit, OnDestroy {
     console.log('URLs updated:', this.urls);
     if (urls.length === 0) {
       this.navService.getFirstUrl().subscribe((url: string | null) => {
-        this.router.navigate([url]);
+        // this.router.navigate([url]);
       });
     }
   }
