@@ -62,8 +62,10 @@ export class SearchModalComponent {
       modal.close(); // Close the modal
     }
 
-    // Clear the input field by resetting the query
-    this.query = ''; // This will reset the input field
-    this.searchResults = []; // Optionally, you can also clear the search results
+    setTimeout(() => {
+      // Clear the input field by resetting the query
+      this.query = ''; // This will reset the input field
+      this.searchResults = []; // Optionally, you can also clear the search results
+    }, 1000);
   }
 }

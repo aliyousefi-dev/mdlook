@@ -1,9 +1,9 @@
 <dialog id="my_modal_2" class="modal text-base-content">
-    <div class="modal-box p-3">
+    <div class="modal-box p-3 max-h-[80vh] overflow-y-hidden flex flex-col gap-5">
         <!-- Search Input -->
         <label class="input w-full focus:outline-none">
             <i class="bx bx-search bx-xs"></i>
-            <input autocomplete="off" #searchInput id="search" type="search" class="grow" placeholder="Search"
+            <input autocomplete="off" #searchInput id="search" type="search" class="grow py-2" placeholder="Search"
                 [(ngModel)]="query" (input)="onInput()" />
         </label>
 
@@ -13,21 +13,23 @@
         </div>
 
         <!-- Search Results -->
-        <div *ngIf="!loading && searchResults.length > 0" class="py-5">
+        <div *ngIf="!loading && searchResults.length > 0" class="py-5 overflow-y-auto flex-1">
             <div *ngFor="let result of searchResults">
                 <a (click)="CloseModal()" [routerLink]="result.path" class="btn w-full flex justify-start">
                     <div class="flex justify-between w-full gap-2">
                         <div class="flex gap-2">
                             <i class="bx bx-file bx-xs"></i>
                             <span>{{ result.title }}</span>
-                            <span>{{ result.path }}</span>
                         </div>
-                        <span>↩︎</span>
+                        <div class="flex gap-2">
+                            <span class="text-xs">{{ result.path }}</span>
+                            <span>↩︎</span>
+                        </div>
                     </div>
                 </a>
 
                 <!-- Display snippet of the content below the title with highlighted search term -->
-                <div class="py-2 text-sm text-gray-600" [innerHTML]="getSnippet(result.content)">
+                <div class="py-2 text-xs text-gray-600" [innerHTML]="getSnippet(result.content)">
                 </div>
             </div>
         </div>
@@ -39,7 +41,7 @@
 
         <!-- See All Results Link -->
         <div class="w-full flex justify-center pt-4">
-            <a href="#">See All Results</a>
+            <a href="#">Total Results {{searchResults.length}}</a>
         </div>
 
         <!-- Keyboard Shortcuts -->
