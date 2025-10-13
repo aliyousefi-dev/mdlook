@@ -24,6 +24,7 @@ with additional features for organizing, processing, and managing your documenta
 	cmd.InitCommandSocket(rootCmd)
 	cmd.InitCommandTest(rootCmd)
 	cmd.InitCommandExport(rootCmd)
+	cmd.InitCommandCook(rootCmd)
 
 	rootCmd.Execute()
 	// Initialize the root command and add subcommands

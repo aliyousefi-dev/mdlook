@@ -1,0 +1,172 @@
+[
+	{
+		"title": "cutome-ui-template",
+		"content": "# Custom UI Templages\r\n\r\nyou can also change the them and create a new them based your need.\r\nbecause of open closed thing.\r\n\r\nthe default them is the daisyui but you can download other themes to.\r\n\r\nThe Core functionality of the mdlook keep same just the them changes.\r\nhow ui must look.\r\n",
+		"path": "/docs/advance/cutome-ui-template"
+	},
+	{
+		"title": "architecture",
+		"content": "\u003c!--\r\n{\r\n\t\"nav_order\": 3,\r\n  \"nav_title\": \"Architecture\"\r\n}\r\n--\u003e\r\n\r\n# Architecture\r\n\r\nit serve all markdowns. and then render them on client frontend locally. you can serve the output with anything.\r\n\r\n---\r\n\r\n```mermaid\r\n    graph TD;\r\n    ServeMarkdown--\u003eFetchMarkdownsOnClient;\r\n    FetchMarkdownsOnClient--\u003eRenderOnWeb;\r\n```\r\n\r\n## Static Serve\r\n\r\nit serve all markdown as public statics\r\n\r\n```yaml\r\n- nav.md\r\n- docs\r\n  - content01.md\r\n  - content02.md\r\n  - content03.md\r\n- assets\r\n  - img.png\r\n```\r\n\r\n## Internal Renderer\r\n\r\nit uses the `MarkdownRendererComponent` to render the markdown.\r\nit render the markdown internally. in client frontend.\r\nalso wrap that and create a custom language for that also.\r\n\r\n## Sync Nav\r\n\r\nThe Sync function sync the `nav.md` file.\r\n\r\n### Nav Structure\r\n\r\nhere you can see the nav structre file `nav.md`\r\n\r\n```md\r\n# MDLook \u003c!-- Doc Header Title --\u003e\r\n\r\n\u003c!-- Pages --\u003e\r\n\r\n- [Overview](docs/overview.md)\r\n- [Quick Start](docs/quick-start.md)\r\n- [Architecture](docs/architecture.md)\r\n- [Web Components](docs/web-components.md)\r\n- [nav](docs/nav.md)\r\n- [assets](docs/assets.md)\r\n- [nav-renderer](docs/nav-renderer.md)\r\n- [init-doc](docs/init-doc.md)\r\n- [export-doc](docs/export-doc.md)\r\n```\r\n\r\n\u003e by default Sync is enabled for auto nav. you can disable that on the `config.json` file.\r\n\r\n### Nested َAlgorythm\r\n\r\nhere show how nested file is rendererd on the `nav.md`\r\n\r\nif there is a same name on outside the sub pages going under that with intend.\r\nif there is not any same name as folder. it create a title and they going under that title.\r\n",
+		"path": "/docs/architecture"
+	},
+	{
+		"title": "changelog",
+		"content": "# Change log\r\n\r\nhere is the all change logs\r\n\r\n---\r\n\r\n### v0.2-beta\r\n\r\n```md\r\n- fix small issues\r\n- support mermaid (mermaid.js)\r\n- support code highlights (using shiki)\r\n- support badge on navbar\r\n- blockout ToC (Table of Content)\r\n```\r\n\r\n---\r\n\r\n### v0.1-beta\r\n\r\n```\r\n- initial project\r\n- fix export\r\n```\r\n",
+		"path": "/docs/changelog"
+	},
+	{
+		"title": "code-highlight",
+		"content": "# Code Highlight\r\n\r\nmdlook provides syntax highlighting for a broad selection of programming languages using the Shiki highlighter.\r\n\r\nBelow is a table of supported language grammars, including their unique IDs and common aliases.\r\n\r\nFor the most up-to-date list and further details, visit the [Shiki Supported Languages](https://shiki.style/languages) page.\r\n\r\n## Bundled Languages\r\n\r\n| Name                 | ID                 | Alias               |\r\n| :------------------- | :----------------- | :------------------ |\r\n| ABAP                 | abap               |                     |\r\n| ActionScript         | actionscript-3     |                     |\r\n| Ada                  | ada                |                     |\r\n| Angular HTML         | angular-html       |                     |\r\n| Angular TypeScript   | angular-ts         |                     |\r\n| Apache Conf          | apache             |                     |\r\n| Apex                 | apex               |                     |\r\n| APL                  | apl                |                     |\r\n| AppleScript          | applescript        |                     |\r\n| Ara                  | ara                |                     |\r\n| AsciiDoc             | asciidoc           | adoc                |\r\n| Assembly             | asm                |                     |\r\n| Astro                | astro              |                     |\r\n| AWK                  | awk                |                     |\r\n| Ballerina            | ballerina          |                     |\r\n| Batch File           | bat                | batch               |\r\n| Beancount            | beancount          |                     |\r\n| Berry                | berry              | be                  |\r\n| BibTeX               | bibtex             |                     |\r\n| Bicep                | bicep              |                     |\r\n| Blade                | blade              |                     |\r\n| 1C (Enterprise)      | bsl                | 1c                  |\r\n| C                    | c                  |                     |\r\n| Cadence              | cadence            | cdc                 |\r\n| Cairo                | cairo              |                     |\r\n| Clarity              | clarity            |                     |\r\n| Clojure              | clojure            | clj                 |\r\n| CMake                | cmake              |                     |\r\n| COBOL                | cobol              |                     |\r\n| CODEOWNERS           | codeowners         |                     |\r\n| CodeQL               | codeql             | ql                  |\r\n| CoffeeScript         | coffee             | coffeescript        |\r\n| Common Lisp          | common-lisp        | lisp                |\r\n| Coq                  | coq                |                     |\r\n| C++                  | cpp                | c++                 |\r\n| Crystal              | crystal            |                     |\r\n| C#                   | csharp             | c# cs               |\r\n| CSS                  | css                |                     |\r\n| CSV                  | csv                |                     |\r\n| CUE                  | cue                |                     |\r\n| Cypher               | cypher             | cql                 |\r\n| D                    | d                  |                     |\r\n| Dart                 | dart               |                     |\r\n| DAX                  | dax                |                     |\r\n| Desktop              | desktop            |                     |\r\n| Diff                 | diff               |                     |\r\n| Dockerfile           | docker             | dockerfile          |\r\n| dotEnv               | dotenv             |                     |\r\n| Dream Maker          | dream-maker        |                     |\r\n| Edge                 | edge               |                     |\r\n| Elixir               | elixir             |                     |\r\n| Elm                  | elm                |                     |\r\n| Emacs Lisp           | emacs-lisp         | elisp               |\r\n| ERB                  | erb                |                     |\r\n| Erlang               | erlang             | erl                 |\r\n| Fennel               | fennel             |                     |\r\n| Fish                 | fish               |                     |\r\n| Fluent               | fluent             | ftl                 |\r\n| Fortran (Fixed Form) | fortran-fixed-form | f for f77           |\r\n| Fortran (Free Form)  | fortran-free-form  | f90 f95 f03 f08 f18 |\r\n| F#                   | fsharp             | f# fs               |\r\n| GDResource           | gdresource         |                     |\r\n| GDScript             | gdscript           |                     |\r\n| GDShader             | gdshader           |                     |\r\n| Genie                | genie              |                     |\r\n| Gherkin              | gherkin            |                     |\r\n| Git Commit Message   | git-commit         |                     |\r\n| Git Rebase Message   | git-rebase         |                     |\r\n| Gleam                | gleam              |                     |\r\n| Glimmer JS           | glimmer-js         | gjs                 |\r\n| Glimmer TS           | glimmer-ts         | gts                 |\r\n| GLSL                 | glsl               |                     |\r\n| Gnuplot              | gnuplot            |                     |\r\n| Go                   | go                 |                     |\r\n| GraphQL              | graphql            | gql                 |\r\n| Groovy               | groovy             |                     |\r\n| Hack                 | hack               |                     |\r\n| Ruby Haml            | haml               |                     |\r\n| Handlebars           | handlebars         | hbs                 |\r\n| Haskell              | haskell            | hs                  |\r\n| Haxe                 | haxe               |                     |\r\n| HashiCorp HCL        | hcl                |                     |\r\n| Hjson                | hjson              |                     |\r\n| HLSL                 | hlsl               |                     |\r\n| HTML                 | html               |                     |\r\n| HTML (Derivative)    | html-derivative    |                     |\r\n| HTTP                 | http               |                     |\r\n| HXML                 | hxml               |                     |\r\n| Hy                   | hy                 |                     |\r\n| Imba                 | imba               |                     |\r\n| INI                  | ini                | properties          |\r\n| Java                 | java               |                     |\r\n| JavaScript           | javascript         | js                  |\r\n| Jinja                | jinja              |                     |\r\n| Jison                | jison              |                     |\r\n| JSON                 | json               |                     |\r\n| JSON5                | json5              |                     |\r\n| JSON with Comments   | jsonc              |                     |\r\n| JSON Lines           | jsonl              |                     |\r\n| Jsonnet              | jsonnet            |                     |\r\n| JSSM                 | jssm               | fsl                 |\r\n| JSX                  | jsx                |                     |\r\n| Julia                | julia              | jl                  |\r\n| Kotlin               | kotlin             | kt kts              |\r\n| Kusto                | kusto              | kql                 |\r\n| LaTeX                | latex              |                     |\r\n| Lean 4               | lean               | lean4               |\r\n| Less                 | less               |                     |\r\n| Liquid               | liquid             |                     |\r\n| LLVM IR              | llvm               |                     |\r\n| Log file             | log                |                     |\r\n| Logo                 | logo               |                     |\r\n| Lua                  | lua                |                     |\r\n| Luau                 | luau               |                     |\r\n| Makefile             | make               | makefile            |\r\n| Markdown             | markdown           | md                  |\r\n| Marko                | marko              |                     |\r\n| MATLAB               | matlab             |                     |\r\n| MDC                  | mdc                |                     |\r\n| MDX                  | mdx                |                     |\r\n| Mermaid              | mermaid            | mmd                 |\r\n| MIPS Assembly        | mipsasm            | mips                |\r\n| Mojo                 | mojo               |                     |\r\n| Move                 | move               |                     |\r\n| Narrat Language      | narrat             | nar                 |\r\n| Nextflow             | nextflow           | nf                  |\r\n| Nginx                | nginx              |                     |\r\n| Nim                  | nim                |                     |\r\n| Nix                  | nix                |                     |\r\n| nushell              | nushell            | nu                  |\r\n| Objective-C          | objective-c        | objc                |\r\n| Objective-C++        | objective-cpp      |                     |\r\n| OCaml                | ocaml              |                     |\r\n| Pascal               | pascal             |                     |\r\n| Perl                 | perl               |                     |\r\n| PHP                  | php                |                     |\r\n| PL/SQL               | plsql              |                     |\r\n| Gettext PO           | po                 | pot potx            |\r\n| Polar                | polar              |                     |\r\n| PostCSS              | postcss            |                     |\r\n| PowerQuery           | powerquery         |                     |\r\n| PowerShell           | powershell         | ps ps1              |\r\n| Prisma               | prisma             |                     |\r\n",
+		"path": "/docs/code-highlight"
+	},
+	{
+		"title": "export",
+		"content": "# Export Command\r\n\r\nthis command used for bundle the docs to a servable file.\r\n\r\n---\r\n\r\n### Usage\r\n\r\nhere is an example of usage\r\n\r\n```bat\r\nmdlook export \u003coutput\u003e\r\n```\r\n",
+		"path": "/docs/commands/export"
+	},
+	{
+		"title": "serve",
+		"content": "# Serve Command\r\n\r\nit used for serve the docs in production environments.\r\n\r\n```\r\nmdlook serve \u003cworkstation-path\u003e\r\n```\r\n    ",
+		"path": "/docs/commands/serve"
+	},
+	{
+		"title": "sync",
+		"content": "# Sync Command\r\n\r\nmenual Syncing the nav\r\n\r\n```\r\nmdlook sync\r\n```\r\n\r\n- Send Websocket a Reload Signal.\r\n- Render Nav Again.\r\n\r\nyou can also do menual sync with this command.\r\n",
+		"path": "/docs/commands/sync"
+	},
+	{
+		"title": "version",
+		"content": "# Version Command\r\n\r\nReturn the app version\r\n\r\n```\r\nmdlook version\r\n```\r\n",
+		"path": "/docs/commands/version"
+	},
+	{
+		"title": "watch",
+		"content": "# Watch Command\r\n\r\nwatch the workstation with live reloading.\r\n\r\n```\r\nmdlook watch \u003cworkstation-path\u003e --disable-sync\r\n```\r\n",
+		"path": "/docs/commands/watch"
+	},
+	{
+		"title": "commands",
+		"content": "\u003c!--\r\n{\r\n\t\"nav_order\": 4,\r\n    \"nav_title\": \"Commands\"\r\n}\r\n--\u003e\r\n\r\n# All Commands\r\n\r\nthis command used for bundle the docs to a servable file.\r\n\r\n---\r\n\r\n### Commnad lists\r\n\r\nhere is an example of usage\r\n\r\n```bat\r\nmdlook export \u003coutput\u003e\r\n```\r\n\r\n```bat\r\nmdlook serve \u003cpath\u003e\r\n```\r\n\r\n```bat\r\nmdlook sync \u003cpath\u003e\r\n```\r\n\r\n```bat\r\nmdlook version\r\n```\r\n\r\n```bat\r\nmdlook wathc \u003cpath\u003e\r\n```\r\n",
+		"path": "/docs/commands"
+	},
+	{
+		"title": "configs",
+		"content": "# Configs\r\n\r\nwhen you create a workstation. you can config that.\r\n\r\nit exist on this path\r\n`config.json` on workstation.\r\n\r\n## Default Config\r\n\r\n```json\r\n{\r\n\t\"docname\": \"MDLook\",\r\n\t\"disableThemes\": true,\r\n\t\"disablePrintOptions\": true,\r\n\t\"disableMarkdownOptions\": true,\r\n\t\"disableToC\": false,\r\n\t\"GitUrl\": \"https://github.com/user/repo\"\r\n}\r\n```\r\n",
+		"path": "/docs/configs"
+	},
+	{
+		"title": "draft",
+		"content": "\u003c!--\r\n{\r\n\t\"nav_order\": 3\r\n}\r\n--\u003e\r\n\r\n# Drafts\r\n\r\ni thinking about how we can also enable ordering for the foldes.\r\n",
+		"path": "/docs/draft"
+	},
+	{
+		"title": "box-icon",
+		"content": "# Box Icons\r\n\r\nit also support the boxicons v2.\r\n\r\n[https://v2.boxicons.com/](https://v2.boxicons.com/)\r\n",
+		"path": "/docs/external/box-icon"
+	},
+	{
+		"title": "mermaid",
+		"content": "# Mermaid\r\n\r\nmdlook also support the mermaid using the `mermiadjs`\r\n\r\ndefine you code as `mermaid` on markdown\r\n[ne](https://mermaid.js.org/syntax/flowchart.html)\r\n\r\n---\r\n\r\n```mermaid\r\n---\r\ntitle: \"Grades\"\r\n---\r\nradar-beta\r\n  axis m[\"Math\"], s[\"Science\"], e[\"English\"]\r\n  axis h[\"History\"], g[\"Geography\"], a[\"Art\"]\r\n  curve a[\"Alice\"]{85, 90, 80, 70, 75, 90}\r\n  curve b[\"Bob\"]{70, 75, 85, 80, 90, 85}\r\n\r\n  max 100\r\n  min 0\r\n```\r\n\r\n````text\r\n```mermaid\r\n---\r\ntitle: \"Grades\"\r\n---\r\n\r\nradar-beta\r\naxis m[\"Math\"], s[\"Science\"], e[\"English\"]\r\naxis h[\"History\"], g[\"Geography\"], a[\"Art\"]\r\ncurve a[\"Alice\"]{85, 90, 80, 70, 75, 90}\r\ncurve b[\"Bob\"]{70, 75, 85, 80, 90, 85}\r\n\r\nmax 100\r\nmin 0\r\n```\r\n````\r\n",
+		"path": "/docs/external/mermaid"
+	},
+	{
+		"title": "feat-dev",
+		"content": "\u003c!--\r\n{\r\n\t\"nav_order\": 3\r\n}\r\n--\u003e\r\n\r\n# Featrues to Develop\r\n\r\nfeature planning for next version:\r\n\r\n- `box-icons`: support the box icons\r\n- `mermaid-diagrams`: support for mermaid\r\n- `searching`: support the searching on the docs\r\n- `versions`: show the app version on the nav\r\n- `copy code button`: copy button on the code blocks\r\n- `toc`: support the table of the content on the markdown page\r\n- `nav order` - a tag that used for ordering the nav.md\r\n",
+		"path": "/docs/feat-dev"
+	},
+	{
+		"title": "cooking",
+		"content": "# Cooking\r\n\r\nsome features need to content be cooked. such as enable ability to searching it need to create a searchable file.\r\n\r\n## Searchable\r\n\r\nit genereate a file that is `search.json` that enable searching on the doc.\r\n",
+		"path": "/docs/features/cooking"
+	},
+	{
+		"title": "filenames",
+		"content": "# File Names\r\n\r\nwhen creating md file use dash or other thing . but don't use space. it breaks some things.\r\n",
+		"path": "/docs/features/filenames"
+	},
+	{
+		"title": "navigation",
+		"content": "# Navigation\r\n\r\nhere you can see the nav structre file `nav.md`\r\n\r\n```\r\n# MDLook \u003c!-- Doc Header Title --\u003e\r\n\r\n\u003c!-- Pages --\u003e\r\n- [Overview](docs/overview.md)\r\n- [Quick Start](docs/quick-start.md)\r\n- [Architecture](docs/architecture.md)\r\n- [Web Components](docs/web-components.md)\r\n- [nav](docs/nav.md)\r\n- [assets](docs/assets.md)\r\n- [nav-renderer](docs/nav-renderer.md)\r\n- [init-doc](docs/init-doc.md)\r\n- [export-doc](docs/export-doc.md)\r\n\r\n```\r\n\r\n\u003e by default Sync is enabled for auto nav. you can disable that on the `config.json` file.\r\n\r\n## Nested Files\r\n\r\nhere show how nested file is rendererd on the `nav.md`\r\n\r\nif there is a same name on outside the sub pages going under that with intend.\r\nif there is not any same name as folder. it create a title and they going under that title.\r\n\r\n# MDLook\r\n",
+		"path": "/docs/features/navigation"
+	},
+	{
+		"title": "runtime-watcher",
+		"content": "# Runtime Watcher\r\n\r\nit use a Event Based Watcher for the changes on the folders.\r\n\r\nit usign the `fsnotify` package.\r\n\r\nit using the the [sync](docs/sync-nav)\r\n\r\nit Start 2 main Servers.\r\n\r\n- WebSocket Server\r\n- Web Server Server\r\n\r\nit also Listen for File Changes and doing the Re render the Nav.\r\n",
+		"path": "/docs/go-refrences/runtime-watcher"
+	},
+	{
+		"title": "nav-item",
+		"content": "# Nav Item\r\n\r\nThis is part of frontend and client.\r\n\r\nThis convert the markdown to a custom html for nav support the daisy ui.\r\n\r\n## Data Structure\r\n\r\n```\r\n// NavItem represents an individual navigation item\r\ntype NavItem struct {\r\n\tTitle string `json:\"title\"`\r\n\tPath  string `json:\"path\"`\r\n}\r\n\r\n// NavRenderStruct represents the structure for rendering the navigation\r\ntype NavRenderStruct struct {\r\n\tHeaderTitle string    `json:\"header_title\"`\r\n\tNavItems    []NavItem `json:\"nav_items\"`\r\n}\r\n```\r\n",
+		"path": "/docs/go-refrences/types/nav-item"
+	},
+	{
+		"title": "help",
+		"content": "# New things\r\n\r\non this doc we can more define things.\r\n",
+		"path": "/docs/help/help"
+	},
+	{
+		"title": "new",
+		"content": "# New Things\r\n\r\nhere is the new\r\n",
+		"path": "/docs/help/new"
+	},
+	{
+		"title": "images",
+		"content": "# Images\r\n\r\nYou can load images also internally as normal .\r\nuse the assets folder for this\r\n\r\n---\r\n\r\n## Usage\r\n\r\nhere is an example of usage\r\n\r\n```md\r\n![alt text](assets/test.png)\r\n```\r\n\r\n## Preview\r\n\r\nthis is an sample of image that loaded.\r\n![alt text](assets/test.png)\r\n",
+		"path": "/docs/images"
+	},
+	{
+		"title": "internal-links",
+		"content": "# Internal Links\r\n\r\nyou can also refrence to internal link like this:\r\n\r\n```\r\n[Title](docs/newthings)\r\n```\r\n\r\n\u003e don't add \\*.md at the url\r\n",
+		"path": "/docs/internal-links"
+	},
+	{
+		"title": "md-metadata",
+		"content": "# Markdown MetaData\r\n\r\nthis is a internal config for markdown to set some variables you can defin this on the markdown like this .\r\n\r\n```\r\n\u003c!--\r\n{\r\n    \"nav_order\": 1,\r\n    \"nav_title\": \"Page Title on Nav Menu\",\r\n    \"nav_tags\": [\"tag1\", \"tag2\"]\r\n}\r\n--\u003e\r\n\r\n# Title\r\n```\r\n",
+		"path": "/docs/md-metadata"
+	},
+	{
+		"title": "overview",
+		"content": "\u003c!--\r\n{\r\n\t\"nav_order\": 1,\r\n\t\"nav_title\": \"Overview\"\r\n}\r\n--\u003e\r\n\r\n# Overview\r\n\r\n\u003e MDLook is currently in beta and under active development.\r\n\r\nIt provides a command-line interface for converting Markdown files to HTML documentation, with additional features for organizing, processing, and managing your documentation workflow.\r\n\r\n## Doc Generating\r\n\r\nIt desinged spceficly for the Doc Creating for and make this process easy for all applications.\r\n\r\n## Features\r\n\r\n- Live Reloading (Dev Mode)\r\n- Multi Themes\r\n- Bundle Export\r\n- Mairmaid Support\r\n- Code Highlight Support\r\n",
+		"path": "/docs/overview"
+	},
+	{
+		"title": "quick-start",
+		"content": "\u003c!--\r\n{\r\n\t\"nav_order\": 2,\r\n\t\"nav_title\": \"Quick Start\"\r\n}\r\n--\u003e\r\n\r\n# Quick Start\r\n\r\nhere we can work on thing that we can do more.\r\n\r\n### Init Doc Workstation\r\n\r\nIts very simple to create a Doc Workstation to work.\r\nthis ask you to pick a name for you docs.\r\n\r\n```batch\r\nmdlook init .\r\n```\r\n\r\n### Watch the Doc\r\n\r\nthen you can watch your doc. open the brwoser the default host is `localhost:8080`\r\n\r\n```batch\r\nmdlook watch .\r\n```\r\n\r\n### Export \u0026 Bundle\r\n\r\nafter you finished your work and its ready to make that public do this command.\r\nthis bundle you work to be as servable things.\r\n\r\n```batch\r\nmdlook export --output \u003cpath\u003e\r\n```\r\n\r\n\u003e By default it export to `dist` folder.\r\n\r\n### Serve (Production)\r\n\r\nthen you can serve your bundled documentation for production use. This will start a server to host your exported docs.\r\n\r\n```batch\r\nmdlook serve \u003cpath\u003e\r\n```\r\n",
+		"path": "/docs/quick-start"
+	},
+	{
+		"title": "toc",
+		"content": "# Table of Contents (ToC)\r\n\r\nmdlook also support hte table of conents.\r\n\r\n---\r\n\r\nyou can disbale that on the config [here](docs/configs)\r\n",
+		"path": "/docs/toc"
+	},
+	{
+		"title": "breadcrumbs",
+		"content": "# Breadcrumbs Component\r\n\r\nIt Render the current active Url as Breadcrumbs on ui.\r\n",
+		"path": "/docs/web-components/breadcrumbs"
+	},
+	{
+		"title": "github-link-button",
+		"content": "# Github Link Button\r\n\r\nThis component render the markdown conetents to html.\r\n",
+		"path": "/docs/web-components/github-link-button"
+	},
+	{
+		"title": "markdown-renderer",
+		"content": "# Markdown Render Component\r\n\r\nThis component render the markdown conetents to html.\r\n",
+		"path": "/docs/web-components/markdown-renderer"
+	},
+	{
+		"title": "nav-renderer",
+		"content": "# Nav Renderer\r\n\r\nThis is part of frontend and client.\r\n\r\nThis convert the markdown to a custom html for nav support the daisy ui.\r\n\r\n## Custom Renderer\r\n",
+		"path": "/docs/web-components/nav-renderer"
+	},
+	{
+		"title": "print-button",
+		"content": "# Print Button\r\n\r\nThis button used to Print the page.\r\n",
+		"path": "/docs/web-components/print-button"
+	},
+	{
+		"title": "search-button",
+		"content": "# Search Button\r\n\r\nthis Open Search Modal for searching on the mark downs.\r\n",
+		"path": "/docs/web-components/search-button"
+	}
+]

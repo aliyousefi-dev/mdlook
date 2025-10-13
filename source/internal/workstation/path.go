@@ -29,3 +29,9 @@ func (workstation *Workstation) GetConfigFilePath() string {
 	configFilePath := filepath.Join(workstationDir, "config.json")
 	return configFilePath
 }
+
+func (workstation *Workstation) GetSearchIndexFilePath() string {
+	workstationDir := workstation.workingpath
+	searchIndexFilePath := filepath.Join(workstationDir, "search_index.json")
+	return searchIndexFilePath
+}
