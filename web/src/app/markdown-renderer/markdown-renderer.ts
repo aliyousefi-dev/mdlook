@@ -8,11 +8,11 @@ import {
   Renderer2,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MarkdownService } from '../services/markdown.service';
-import { UrlService } from '../services/url-service';
+import { MarkdownService } from '../../services/markdown.service';
+import { UrlService } from '../../services/url-service';
 import { Subscription } from 'rxjs';
 import { Marked } from 'marked'; // Import marked
-import { SafeHtmlPipe } from '../services/safeHtmlPipe';
+import { SafeHtmlPipe } from '../../services/safeHtmlPipe';
 import customMarkdownRenderer from '../../markdown-renderer/customMarkdownRenderer';
 import { markedHighlight } from 'marked-highlight';
 import { codeToHtml } from 'shiki';

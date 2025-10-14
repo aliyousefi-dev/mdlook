@@ -10,10 +10,10 @@ import { SearchButtonComponent } from './search-button/search-button';
 import { PrintButtonComponent } from './print-button/print-button';
 import { GithubLinkButtonComponent } from './github-link-button/github-link-button';
 import { SearchModalComponent } from './search-modal/search-modal';
-import { UrlService } from './services/url-service';
+import { UrlService } from '../services/url-service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-import { NavService } from './services/nav.service';
+import { NavService } from '../services/nav.service';
 
 @Component({
   selector: 'app-root',
@@ -61,10 +61,9 @@ export class App implements OnInit, OnDestroy {
 
   onUrlChanged(urls: string[]) {
     this.urls = urls;
-    console.log('URLs updated:', this.urls);
     if (urls.length === 0) {
       this.navService.getFirstUrl().subscribe((url: string | null) => {
-        // this.router.navigate([url]);
+        this.router.navigate([url]);
       });
     }
   }

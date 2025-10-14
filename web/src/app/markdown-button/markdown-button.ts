@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UrlService } from '../services/url-service';
+import { UrlService } from '../../services/url-service';
 import { Subscription } from 'rxjs';
 import { OnInit, OnDestroy } from '@angular/core';
 
