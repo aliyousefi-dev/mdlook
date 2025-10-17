@@ -12,9 +12,12 @@ it serve all markdowns. and then render them on client frontend locally. you can
 ---
 
 ```mermaid
-    graph TD;
-    ServeMarkdown-->FetchMarkdownsOnClient;
-    FetchMarkdownsOnClient-->RenderOnWeb;
+flowchart TD
+  ServeMarkdown e1@--> FetchMarkdownsOnClient;
+  FetchMarkdownsOnClient e2@--> RenderOnWeb;
+
+  e1@{ animate: true }
+  e2@{ animate: true }
 ```
 
 ## Static Serve

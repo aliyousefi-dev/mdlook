@@ -1,0 +1,14 @@
+<!--
+{
+	"nav_order": 3
+}
+-->
+
+# Upcoming Features
+
+feature planning for next version:
+
+- `#searching`: Improve Searching Box Experience
+- `#copy code button`: copy button on the code blocks
+- `#toc`: Improve Table of Content
+- `#change log`: a separate ui for changelog
