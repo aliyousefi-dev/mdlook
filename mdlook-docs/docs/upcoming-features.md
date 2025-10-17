@@ -13,3 +13,4 @@ feature planning for next version:
 - `#toc`: Improve Table of Content
 - `#change log`: a separate ui for changelog
 - `#mermaid_theme`: Fix mermaid theme with Core Theme
+- `#nav`: open nav collapsable item when select that page
