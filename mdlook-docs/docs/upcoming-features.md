@@ -12,3 +12,4 @@ feature planning for next version:
 - `#copy code button`: copy button on the code blocks
 - `#toc`: Improve Table of Content
 - `#change log`: a separate ui for changelog
+- `#mermaid_theme`: Fix mermaid theme with Core Theme
