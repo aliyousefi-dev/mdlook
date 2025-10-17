@@ -14,3 +14,5 @@ feature planning for next version:
 - `#change log`: a separate ui for changelog
 - `#mermaid_theme`: Fix mermaid theme with Core Theme
 - `#nav`: open nav collapsable item when select that page
+- `#ssl`: Add SSL support for secure connections
+- `#favicon`: Add support for custom favicons
