@@ -2,7 +2,7 @@
 - [Quick Start](docs/quick-start.md)
 - [draft](docs/draft.md)
 - [Architecture](docs/architecture.md)
-- [upcoming-features](docs/upcoming-features.md)
+- [next-features](docs/next-features.md)
 - [Commands](docs/commands.md)
 - [md-metadata](docs/md-metadata.md)
 - [internal-links](docs/internal-links.md)

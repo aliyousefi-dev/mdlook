@@ -14,6 +14,8 @@ import { UrlService } from '../services/url-service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { NavService } from '../services/nav.service';
+import { ChangelogButtonComponent } from './changelog-button/changelog-button';
+import { NextFeaturesButtonComponent } from './next-features-button/next-features-button';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +32,8 @@ import { NavService } from '../services/nav.service';
     SearchModalComponent,
     PrintButtonComponent,
     GithubLinkButtonComponent,
+    ChangelogButtonComponent,
+    NextFeaturesButtonComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

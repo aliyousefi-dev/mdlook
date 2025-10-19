@@ -4,7 +4,7 @@
 }
 -->
 
-# Upcoming Features
+# Upcoming Features v0.3-beta
 
 feature planning for next version:
 
@@ -16,3 +16,4 @@ feature planning for next version:
 - `#nav`: open nav collapsable item when select that page
 - `#ssl`: Add SSL support for secure connections
 - `#favicon`: Add support for custom favicons
+- `#active_menu`: Highlight active menu item on nav
