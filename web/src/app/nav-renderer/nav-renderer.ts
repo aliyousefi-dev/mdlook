@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MarkdownService } from '../../services/markdown.service';
@@ -16,12 +16,13 @@ import { ConfigService } from '../../services/config.service';
   imports: [CommonModule, RouterModule, SafeHtmlPipe],
   templateUrl: './nav-renderer.html',
 })
-export class NavRenderer implements OnInit {
+export class NavRenderer implements OnInit, OnDestroy {
   private markdownService = inject(MarkdownService);
   private configService = inject(ConfigService);
   private urlService = inject(UrlService);
 
   private urlSub?: Subscription;
+  private routerSub?: Subscription;
   urls: string[] = [];
 
   constructor(private router: Router) {}
@@ -60,6 +61,22 @@ export class NavRenderer implements OnInit {
         });
       }
     }, 500);
+
+    // Subscribe to router events to detect navigation changes
+    this.routerSub = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.setActiveLink();
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.urlSub) {
+      this.urlSub.unsubscribe();
+    }
+    if (this.routerSub) {
+      this.routerSub.unsubscribe();
+    }
   }
 
   onUrlChanged(urls: string[]) {
@@ -68,8 +85,9 @@ export class NavRenderer implements OnInit {
       return;
     }
 
-    const segments = [...urls];
-    segments[segments.length - 1] = segments[segments.length - 1];
+    const fullurl = urls.join('/');
+    console.log('URLs changed:', fullurl);
+    this.setActiveLink();
   }
 
   async convertMarkdownToHtml(markdown: string): Promise<string> {
@@ -79,5 +97,20 @@ export class NavRenderer implements OnInit {
 
     // Replace href with routerLink for internal links
     return html;
+  }
+
+  // Function to check if current URL matches the link and set active class
+  private setActiveLink() {
+    const currentUrl = this.router.url;
+    const links = document.querySelectorAll('#nav-renderer a[routerLink]');
+
+    links.forEach((link: any) => {
+      const routerLink = link.getAttribute('routerLink');
+      if (routerLink && currentUrl.includes(routerLink)) {
+        link.classList.add('menu-active');
+      } else {
+        link.classList.remove('menu-active');
+      }
+    });
   }
 }
