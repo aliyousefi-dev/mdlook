@@ -22,7 +22,7 @@ func (workstation *Workstation) GenerateDefaultNavFile() {
 		defer file.Close()
 
 		// Write default content to the nav.md file
-		_, err = file.WriteString("# Documentation\n\n- [introduction](docs/introduction.md)\n")
+		_, err = file.WriteString("- [introduction](docs/introduction.md)\n")
 		if err != nil {
 			log.Fatalf("error writing to nav file: %v", err)
 		}
@@ -73,15 +73,6 @@ func (workstation *Workstation) GenerateAssetsFolder() {
 
 		log.Println("Assets folder created successfully.")
 
-		// Create a placeholder image (e.g., "logo.png")
-		assetsFilePath := filepath.Join(assetsDirPath, "logo.png")
-		// Just creating an empty file as a placeholder (you can replace this with an actual image later)
-		_, err = os.Create(assetsFilePath)
-		if err != nil {
-			log.Fatalf("error creating logo.png in assets folder: %v", err)
-		}
-
-		log.Println("Placeholder logo.png file created in assets folder.")
 	} else {
 		log.Println("Assets folder already exists.")
 	}

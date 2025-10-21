@@ -3,6 +3,7 @@ package types
 type MdLookConfig struct {
 	DocName                string `json:"docname"`
 	DisableThemes          bool   `json:"disableThemes"`
+	AppVersion             string `json:"appversion"`
 	DisablePrintOptions    bool   `json:"disablePrintOptions"`
 	DisableMarkdownOptions bool   `json:"disableMarkdownOptions"`
 	GitUrl                 string `json:"GitUrl"`
@@ -15,7 +16,8 @@ func GetDefaultConfigData() MdLookConfig {
 		DisableThemes:          false,
 		DisablePrintOptions:    false,
 		DisableMarkdownOptions: false,
-		GitUrl:                 "https://github.com/user/repo",
+		GitUrl:                 "https://github.com",
 		SyncNav:                true,
+		AppVersion:             "0.0.0",
 	}
 }
