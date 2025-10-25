@@ -24,7 +24,7 @@ export function customCodeRenderer(
   <div class="absolute top-2 right-5 flex items-center justify-end h-full opacity-0 group-hover:opacity-100 group-hover:block transition-opacity duration-300 z-10">
     <div class="tooltip tooltip-right self-start" data-tip="Copy to clipboard">
       <button class="btn btn-circle btn-sm" aria-label="Copy to clipboard">
-        <i class="bx bx-clipboard bx-xs"></i>
+        <i class='bx bx-copy-alt bx-xs' ></i>
       </button>
     </div>
   </div>
