@@ -17,3 +17,8 @@ feature planning for next version:
 - `#ssl`: Add SSL support for secure connections
 - `#favicon`: Add support for custom favicons
 - `#active_menu`: Highlight active menu item on nav
+- `#Search` adding search objects to the search menu. convert the html to searchable object. like https://ui.shadcn.com/docs/installation
+- `#bottom_gap`: adding an space at the end of page
+- `#theme light/dark swap`: allow users to switch between light and dark themes
+- `#Empty Page`: Showing that Markdown files are empty or not found
+- `#Theme State Save`: Remember user's theme choice (light/dark) with local storage

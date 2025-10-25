@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 import { NavService } from '../services/nav.service';
 import { ChangelogButtonComponent } from './changelog-button/changelog-button';
 import { NextFeaturesButtonComponent } from './next-features-button/next-features-button';
+import { ThemeSwapButtonComponent } from './theme-swap-button/theme-swap-button';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,7 @@ import { NextFeaturesButtonComponent } from './next-features-button/next-feature
     GithubLinkButtonComponent,
     ChangelogButtonComponent,
     NextFeaturesButtonComponent,
+    ThemeSwapButtonComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

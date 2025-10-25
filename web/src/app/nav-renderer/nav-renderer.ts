@@ -91,12 +91,28 @@ export class NavRenderer implements OnInit, OnDestroy {
   }
 
   async convertMarkdownToHtml(markdown: string): Promise<string> {
+    const filteredMarkdown = this.removeUnwantedLinks(markdown);
+
     const markedrender = new Marked();
     markedrender.use(customNavRenderer);
-    let html = markedrender.parse(markdown).toString();
+    let html = markedrender.parse(filteredMarkdown).toString();
 
     // Replace href with routerLink for internal links
     return html;
+  }
+
+  private removeUnwantedLinks(markdown: string): string {
+    // Split markdown into lines
+    const lines = markdown.split('\n');
+
+    // Filter out lines that contain 'changelog.md' or 'next-features.md'
+    const filteredLines = lines.filter(
+      (line) =>
+        !line.includes('changelog.md') && !line.includes('next-features.md')
+    );
+
+    // Join the filtered lines back into a single string
+    return filteredLines.join('\n');
   }
 
   // Function to check if current URL matches the link and set active class
