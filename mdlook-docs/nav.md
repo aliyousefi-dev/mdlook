@@ -1,31 +1,28 @@
 - [Overview](docs/overview.md)
+- [installation](docs/installation.md)
 - [Quick Start](docs/quick-start.md)
+- [draft](docs/draft.md)
 - [Architecture](docs/architecture.md)
 - [next-features](docs/next-features.md)
-- [draft](docs/draft.md)
-- [contributing](docs/contributing.md)
 - [Commands](docs/commands.md)
-- [internal-links](docs/internal-links.md)
-- [md-metadata](docs/md-metadata.md)
+- [contributing](docs/contributing.md)
 - [configs](docs/configs.md)
+- [md-metadata](docs/md-metadata.md)
 - [toc](docs/toc.md)
-- [cooking](docs/cooking.md)
 - [searchable-object](docs/searchable-object.md)
 - [changelog](docs/changelog.md)
-- [images](docs/images.md)
 - [code-highlight](docs/code-highlight.md)
-- ### features
-  - [cooking](docs/features/cooking.md)
-  - [filenames](docs/features/filenames.md)
-  - [navigation](docs/features/navigation.md)
+- [images](docs/images.md)
+- [cooking](docs/cooking.md)
+- [internal-links](docs/internal-links.md)
+- ### advance
+  - [cutome-ui-template](docs/advance/cutome-ui-template.md)
 - ### commands
   - [export](docs/commands/export.md)
   - [serve](docs/commands/serve.md)
   - [sync](docs/commands/sync.md)
   - [version](docs/commands/version.md)
   - [watch](docs/commands/watch.md)
-- ### advance
-  - [cutome-ui-template](docs/advance/cutome-ui-template.md)
 - ### help
   - [help](docs/help/help.md)
   - [new](docs/help/new.md)
@@ -33,6 +30,10 @@
   - [runtime-watcher](docs/go-refrences/runtime-watcher.md)
   - ### types
     - [nav-item](docs/go-refrences/types/nav-item.md)
+- ### features
+  - [cooking](docs/features/cooking.md)
+  - [filenames](docs/features/filenames.md)
+  - [navigation](docs/features/navigation.md)
 - ### external
   - [box-icon](docs/external/box-icon.md)
   - [mermaid](docs/external/mermaid.md)
