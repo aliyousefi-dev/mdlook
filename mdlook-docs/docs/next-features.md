@@ -22,3 +22,5 @@ feature planning for next version:
 - `#theme light/dark swap`: allow users to switch between light and dark themes
 - `#Empty Page`: Showing that Markdown files are empty or not found
 - `#Theme State Save`: Remember user's theme choice (light/dark) with local storage
+- `#Reordering`: Allow reordering of items inside the web interface
+- `#Pagination`: Add Previous and Next Page buttons
