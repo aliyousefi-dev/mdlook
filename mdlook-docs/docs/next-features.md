@@ -24,3 +24,10 @@ feature planning for next version:
 - `#Theme State Save`: Remember user's theme choice (light/dark) with local storage
 - `#Reordering`: Allow reordering of items inside the web interface
 - `#Pagination`: Add Previous and Next Page buttons
+- `#PDF`: Add PDF export functionality
+- `#Edit`: Edit inside Web interface
+- adding wishlist for the features
+- support different template . for game wiki and software documentation and more
+
+- i thinking more about a ui that we can using inside that for creating docs
+  the problem is i need create some thing that support also the copilot.
